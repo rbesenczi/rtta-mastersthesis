@@ -1,0 +1,23 @@
+message TrafficAnalytics{
+
+    required string car_id = 1;
+    required string timestamp = 2;
+    required LatitudeNS latitudens = 3;
+    required double latitude = 4;
+    required longitudeEW longitudeew = 5;
+    required double longitude = 6;
+    required double density = 7;
+    required uint32 vehicle_speed_gps = 8;
+    optional uint32 vehicle_speed_can = 9;
+    optional uint32 fuel_level = 10;
+
+    enum LatitudeNS{
+        NORTH = 0;
+        SOUTH = 1;
+    }
+
+    enum longitudeEW{
+        EAST = 0;
+        WEST = 1;
+    }
+}
