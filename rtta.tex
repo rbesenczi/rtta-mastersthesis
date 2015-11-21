@@ -212,7 +212,10 @@ A második próbálkozásunkkor utakon számolt távolságot mértünk (tehát a
 
 Az OOCWC rendszer alapkiadása csak egy rendőr-gengszter párt tud kezelni. A mi megoldásunk $N$ pár kezelésére képes, amely egy $N{\times}M$ mátrixot készít, egy-egy távolságértéket minden egyes rendőr és gengszter között. (Itt jegyezzük meg, hogy ezek a távolságok nem szimmetrikusak az egyirányú utak miatt.) Ebben a mátrixban keressük a legkisebb értéket (jelöljük $M_1$, $N_1$), így az $M_1$ rendőr az $N_1$ gengsztert fogja üldözni. Az iteráció a rendőrágensek számáig fut.
 
-Az algoritmus hatékonyságát tekintve megjegyezhetjük, hogy egy Apple MacBook Air 13" (Model A1465) laptopon (Intel Core i5 1,4 GHz, 2 processzormag 4 szálon, 4 GB memória) a mátrix kiszámolása (tehát 100$\times$10 útvonal) Debrecen térképén átlagosan 200 ms-ot vett igénybe. Ez azt jelenti, hogy egy útvonal kiszámolása átlagosan 200 \si{\micro}s időt vett igénybe. (Természetesen itt a térkép tulajdonságai is fontosak, hiszen több csúccsal és több éllel rendelkező gráfban ez lassabb lehet, valamint a feldolgozás kötegelt.)
+Az algoritmus hatékonyságát tekintve megjegyezhetjük, hogy egy Apple MacBook Air 13" (Model A1465) laptopon (Intel Core i5 1,4 GHz, 2 processzormag 4 szálon, 4 GB memória) a mátrix kiszámolása (tehát 100$\times$10 útvonal) Debrecen térképén átlagosan 200 ms-ot vett igénybe. Ez azt jelenti, hogy egy útvonal kiszámolása átlagosan 200 \si{\micro}s időt vett igénybe. (Természetesen itt a térkép tulajdonságai is fontosak, hiszen több csúccsal és több éllel rendelkező gráfban ez lassabb lehet, valamint a feldolgozás kötegelt.) Az \ref{rsmcode}. forráskódrészlet az algoritmust prezentálja.
+
+\newpage
+\lstinputlisting[language=C++, caption=A ``Police Edition'' változathoz készített algoritmus, label=rsmcode]{src/rsmcode.cpp}
 
 \chapter{Real-time Traffic Analyzer}
 \label{rttachapter}
