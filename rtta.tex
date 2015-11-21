@@ -417,6 +417,18 @@ A tesztelés során 10000 járművet inicializáltunk a mért adatokon számolt 
 
 \todo[inline]{Több eszközös mérés, City Cloud, Szimulációs algoritmus eloszlástartó legyen.}
 
+A fejlesztési folyamat során készítettünk egy gyors prototípust, a Real-time Traffic Analyzert. Mivel prototípusról van szó, egy tesztelési fázis még hátra van. Próbamérést ugyan végeztünk, de azt csupán egy eszközzel, egy viszonylag kis mintán. Már megkezdődött annak a munkának az előkészítése, amellyel több eszközzel (15-20 db), egész Debrecenre kiterjedő, folyamatos mérést fogunk végezni. Ez az előkészítés több oldalról is fejlesztést igényel. Habár az eszköz működőképes, szükséges megvizsgálnunk, hogyan építhető be járművekbe. Ehhez pontosan kell ismernünk az adott jármű tulajdonságait, hiszen nem ugyanazon elvek szerint alkalmazható egy ilyen eszköz egy buszban vagy egy személygépjárműben, esetleg villamoson. A teszteléshez használt eszközparkot ennek fényében kell bővítenünk.
+
+Az eszközpark bővítése után elvégezhető nagy tömegű mérés miatt szükséges a Robocar City Cloud alrendszer felépítése is. Ez egy olyan felhő alapú szolgáltatás, amely egyrészről a gyűjtött adatok tárolását, valamint azok aggregációját, feldolgozását teszi lehetővé.
+
+A Real-time Traffic Analyzer jelenleg egy adatgyűjtő rendszer része, de terveink között szerepel egy szabványos interface kialakítása a városi forgalom-adminisztrációs rendszer és a jármű között. Tervünk, hogy ez az eszköz lesz a kapcsolat a smart city alkalmazás és a jármű között. Ezt kétféleképpen oldhatjuk meg, egyrészt egy megjelenítőt építünk a rendszerbe, vagy a jármű fedélzeti elektronikájához és közvetve a szórakoztató-navigációs központhoz csatlakoztatjuk az RTTA-t.
+
+Az OOCWC Robocar City Emulator modulját tekintve megmutattuk, hogy a jelenleg a rendszer részének tekinthető szimulációs algoritmus nem megfelelő valós forgalom szimulálására. Pillanatnyilag a rendszerben kétféle szimulációs algoritmus implementált. Egyrészt egy véletlenszerű bolyongásnak tekinthető (random walk), amelynek működési elve, hogy az egyes járművek inicializáláskor véletlenszerűen választanak egy útpontot a térképen és elindulnak. Amint elérik, választanak egy másikat (ugyancsak véletlenszerűen) és így tovább, egészen a szimuláció végéig. 
+
+A másik szimulációs algoritmus az ún. hangyaszimuláció. Ennek lényege, hogy -- a hangyakolóniáknál is ismert módon -- az egyes járművek egy ``feromoncsíkot'' húznak maguk után. A többi jármű ezt az útvonalat követi. Ennek eredménye, hogy amerre az autók mozognak, arra mozog a többi is. (A hangyaszimulációkról részletesebben \cite{ant1} és \cite{ant2}).
+
+Célunk tehát, hogy egy olyan szimulációs algoritmust fejlesszünk, amely tartja azt az eloszlást, amelyet a mérések adnak a számunkra.
+
 \chapter{Összefoglalás}
 
 \todo[inline]{Max 2 oldalas összegzés.}
