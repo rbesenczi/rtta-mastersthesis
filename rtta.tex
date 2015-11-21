@@ -22,6 +22,7 @@
 \usepackage{listings}
 \usepackage{todonotes}
 \usepackage{rotating}
+\usepackage{siunitx}
 
 \bibliographystyle{abbrvnat}
 
@@ -139,9 +140,12 @@ A két terület találkozási pontja egyértelmű: egy teljesen ésszerű elkép
 
 Jelen dolgozat egy olyan tömegérzékeléses eszköz kiépítésének technikai és elméleti oldalát mutatja be, mellyel egy városi adminisztráció folyamatosan képes monitorozni a forgalmat. Az eszköz hardware illetve software komponensekből épül fel, és képes valós időben adatot gyűjteni a körülötte lévő forgalmi helyzetről, azt továbbítani egy szerveralkalmazás felé. A prototípussal egy próbamérést végeztünk, az adatokat elemeztük, aggregáltuk, majd egy forgalomszimulációra alkalmas rendszerben teszteltük, így megfigyelhetővé vált a forgalmi helyzet változása a kiinduló adatokhoz képest. Ennek az eszköznek a segítségével, valamint a későbbiekben leírt forgalomszimulációs rendszer segítségével képesek vagyunk pontosabb, a forgalmi helyzetet is figyelembe vevő útvonalat tervezni a forgalomban résztvevő egységeknek.
 
-A dolgozat az alábbiak szerint épül fel: a következő fejezetben egy kitekintést adunk a Smart City kutatási-fejlesztési területre, majd röviden bemutatjuk a Robocar World Championship (vagy röviden OOCWC) rendszer felépítését és működését. A \ref{rttachapter}. fejezetben részletesen bemutatjuk a fejlesztett adatgyűjtő rendszert, a működésével szemben támasztott követelményeket és a tervezést (\ref{tervezes}. rész), a hardware (\ref{rttahw}. rész) és a software (\ref{rttasw}. rész) működését, valamint a felhasznált fejlesztőeszközöket (\ref{dev}. rész). A \ref{cstschapter}. fejezetben bemutatjuk a mért adatokon alapuló szimulációt. A \ref{results}. fejezetben összegezzük az eredményeinket, valamint adunk egy rövid konklúziót.
+A dolgozat az alábbiak szerint épül fel: a következő fejezetben egy kitekintést adunk a Smart City kutatási-fejlesztési területre, majd röviden bemutatjuk a Robocar World Championship (vagy röviden OOCWC) rendszer felépítését és működését. A \ref{rttachapter}. fejezetben részletesen bemutatjuk a fejlesztett adatgyűjtő rendszert, a működésével szemben támasztott követelményeket és a tervezést (\ref{tervezes}. rész), a hardware (\ref{rttahw}. rész) és a software (\ref{rttasw}. rész) működését, valamint a felhasznált fejlesztőeszközöket (\ref{dev}. rész). A \ref{cstschapter}. fejezetben bemutatjuk a mért adatokon alapuló szimulációt. A \ref{results}. fejezetben összegezzük az eredményeinket, a \ref{futureworks}. fejezetben a jövőbeli munkákat, illetve a rendszer továbbfejlesztésének lehetőségeit tárgyaljuk.
+A \ref{summary}. fejezetben összegezzük a dolgozatot.
 
-\chapter{Kapcsolódó kutatások}
+\chapter{Kapcsolódó kutatások és fejlesztések}
+
+\section{Kitekintés}
 
 A Okos Város kutatási, fejlesztési terület jelentős szerepet fog játszani az következő évtizedekben. Előrejelzések szerint 2023-ig több mint 170 milliárd dollár beruházás fog megvalósulni világszerte \cite{navigant}. A különböző informatikai megoldások egyre nagyobb számban vannak jelen a hétköznapokban már napjainkban is, mint például a VITAL \cite{vital}, a FI\-Ware \cite{fiware} vagy az iCity \cite{icity}. Ezen felül egyre több kezdeményezés tesz kísérletet arra, hogy a városi lakosság hétköznapjait okosabbá és biztonságosabbá tegye (\cite{smartsantander}, \cite{futureglasgow}, \cite{myneighbourhood}). Emellett sok tanulmány foglalkozik a smart city fogalomkörével, illetve hogyan mérhető egy város ``smartsága'' (\cite{yamauchi2014development}, \cite{neirotti2014current}, \cite{de2014smart}, \cite{carli2013measuring}). A \cite{giffinger2007smart} tanulmány egy sorrendet is felállított az európai városokról ``smartság'' tekintetében. A vészhelyzetek kezelése is kiemelt szerepet kap (például \cite{du2012research}). A témánkhoz kapcsolódóan megemlíthető, hogy a \cite{mohan2008nericell} szerzői egy mobiltelefon alapú, automatikus forgalommérő rendszert fejlesztettek.
 
@@ -195,6 +199,20 @@ Az OOCWC rendszerben a szimulációt a gyűjtött adatok alapján inicializálju
 \subfigure{\includegraphics[width=5.3in]{img/m4}\label{p2}}
 \caption{Pillanatkép a rendszer ``Police Edition'' változatából. A térkép a OSM egy részlete, Manhattan, New York City, USA. A megjelenítést a JXMapViewer2 \cite{jxmapv} biztosítja. A térképen a routine car rózsaszínnel, a gengszter ágensek pirossal (smart car), a rendőrágensek (guided car) kékkel jelölve. Forrás: \cite{infocomjournal} \label{police}}
 \end{figure}
+
+\section{Ismerkedés az OOCWC rendszerrel}
+
+Céljaink elérése érdekében jobban meg szerettük volna ismerni az OOCWC rendszert. Remek lehetőséget adott a Debreceni Egyetem Informatikai Karán már többször megrendezett Robotautó Világbajnokság, melynek keretében a rendszer ``Police Edition'' változatából készíthetnek egy saját fork-ot a hallgatók és az érdeklődő kutatók. A játék célja, hogy a rendőr ágensekkel minél több gengszter ágenst kapjunk el. Mi is elkészítettük a saját változatunkat, melynek működéséről egy rövid összegzést adunk. (Lásd még \cite{forkcoginfocom}).
+
+A szimuláció kezdetekor 100 gengszter ágens és 10 rendőr ágens kerül inicializálásra, a térképre véletlenszerűen, egyenletes eloszlást követve kerülnek fel. A szimuláció 10 percig tart. Mivel a rendszer multi-ágens alapú, minden egyes rendőrágenst ugyanaz az algoritmus vezérel és ugyanazok a heurisztikák érvényesek, például a legközelebbi gengsztert üldözzük. A mi algoritmusunk lényege, hogy egy gengsztert csak egy rendőr üldözhet. Ez a megközelítés az egyenletes eloszlás miatt lényeges. Célunk volt olyan rendőr-gengszter párok felállítása, melyek a szimuláció adott állapotában távolságminimalizáltak.
+
+Az első megközelítésben a Harvestine-távolságot használtuk, amely az OOCWC alapkiadásában is megtalálható. Ezt a módszert elvetettük, mivel nem hozott kielégítő eredményeket.
+
+A második próbálkozásunkkor utakon számolt távolságot mértünk (tehát a valós, nem légvonalban mért távolságot), ahol természetesen figyelembe vettük az egyirányú utakra vonatkozó megszorításokat is. A rendszer külön kezeli az utcák különböző irányait. Az utak csomópontjai a gráf csúcsainak, az egyes irányok pedig a csúcsok közötti éleknek felelnek meg. Ha tehát egy utca kétirányú, akkor a gráf két csúcsából mindkét irányba indul egy-egy irányított él a másik csúcsba. 
+
+Az OOCWC rendszer alapkiadása csak egy rendőr-gengszter párt tud kezelni. A mi megoldásunk $N$ pár kezelésére képes, amely egy $N{\times}M$ mátrixot készít, egy-egy távolságértéket minden egyes rendőr és gengszter között. (Itt jegyezzük meg, hogy ezek a távolságok nem szimmetrikusak az egyirányú utak miatt.) Ebben a mátrixban keressük a legkisebb értéket (jelöljük $M_1$, $N_1$), így az $M_1$ rendőr az $N_1$ gengsztert fogja üldözni. Az iteráció a rendőrágensek számáig fut.
+
+Az algoritmus hatékonyságát tekintve megjegyezhetjük, hogy egy Apple MacBook Air 13" (Model A1465) laptopon (Intel Core i5 1,4 GHz, 2 processzormag 4 szálon, 4 GB memória) a mátrix kiszámolása (tehát 100$\times$10 útvonal) Debrecen térképén átlagosan 200 ms-ot vett igénybe. Ez azt jelenti, hogy egy útvonal kiszámolása átlagosan 200 \si{\micro}s időt vett igénybe. (Természetesen itt a térkép tulajdonságai is fontosak, hiszen több csúccsal és több éllel rendelkező gráfban ez lassabb lehet, valamint a feldolgozás kötegelt.)
 
 \chapter{Real-time Traffic Analyzer}
 \label{rttachapter}
@@ -414,8 +432,7 @@ A tesztelés során 10000 járművet inicializáltunk a mért adatokon számolt 
 \end{figure}
 
 \chapter{Jövőbeli munka}
-
-\todo[inline]{Több eszközös mérés, City Cloud, Szimulációs algoritmus eloszlástartó legyen.}
+\label{futureworks}
 
 A fejlesztési folyamat során készítettünk egy gyors prototípust, a Real-time Traffic Analyzert. Mivel prototípusról van szó, egy tesztelési fázis még hátra van. Próbamérést ugyan végeztünk, de azt csupán egy eszközzel, egy viszonylag kis mintán. Már megkezdődött annak a munkának az előkészítése, amellyel több eszközzel (15-20 db), egész Debrecenre kiterjedő, folyamatos mérést fogunk végezni. Ez az előkészítés több oldalról is fejlesztést igényel. Habár az eszköz működőképes, szükséges megvizsgálnunk, hogyan építhető be járművekbe. Ehhez pontosan kell ismernünk az adott jármű tulajdonságait, hiszen nem ugyanazon elvek szerint alkalmazható egy ilyen eszköz egy buszban vagy egy személygépjárműben, esetleg villamoson. A teszteléshez használt eszközparkot ennek fényében kell bővítenünk.
 
@@ -430,6 +447,7 @@ A másik szimulációs algoritmus az ún. hangyaszimuláció. Ennek lényege, ho
 Célunk tehát, hogy egy olyan szimulációs algoritmust fejlesszünk, amely tartja azt az eloszlást, amelyet a mérések adnak a számunkra.
 
 \chapter{Összefoglalás}
+\label{summary}
 
 \todo[inline]{Max 2 oldalas összegzés.}
 
