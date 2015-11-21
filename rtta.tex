@@ -140,7 +140,7 @@ A két terület találkozási pontja egyértelmű: egy teljesen ésszerű elkép
 
 Jelen dolgozat egy olyan tömegérzékeléses eszköz kiépítésének technikai és elméleti oldalát mutatja be, mellyel egy városi adminisztráció folyamatosan képes monitorozni a forgalmat. Az eszköz hardware illetve software komponensekből épül fel, és képes valós időben adatot gyűjteni a körülötte lévő forgalmi helyzetről, azt továbbítani egy szerveralkalmazás felé. A prototípussal egy próbamérést végeztünk, az adatokat elemeztük, aggregáltuk, majd egy forgalomszimulációra alkalmas rendszerben teszteltük, így megfigyelhetővé vált a forgalmi helyzet változása a kiinduló adatokhoz képest. Ennek az eszköznek a segítségével, valamint a későbbiekben leírt forgalomszimulációs rendszer segítségével képesek vagyunk pontosabb, a forgalmi helyzetet is figyelembe vevő útvonalat tervezni a forgalomban résztvevő egységeknek.
 
-A dolgozat az alábbiak szerint épül fel: a következő fejezetben egy kitekintést adunk a Smart City kutatási-fejlesztési területre, majd röviden bemutatjuk a Robocar World Championship (vagy röviden OOCWC) rendszer felépítését és működését. A \ref{rttachapter}. fejezetben részletesen bemutatjuk a fejlesztett adatgyűjtő rendszert, a működésével szemben támasztott követelményeket és a tervezést (\ref{tervezes}. rész), a hardware (\ref{rttahw}. rész) és a software (\ref{rttasw}. rész) működését, valamint a felhasznált fejlesztőeszközöket (\ref{dev}. rész). A \ref{cstschapter}. fejezetben bemutatjuk a mért adatokon alapuló szimulációt. A \ref{results}. fejezetben összegezzük az eredményeinket, a \ref{futureworks}. fejezetben a jövőbeli munkákat, illetve a rendszer továbbfejlesztésének lehetőségeit tárgyaljuk.
+A dolgozat az alábbiak szerint épül fel: a következő fejezetben egy kitekintést adunk a Smart City kutatási-fejlesztési területre, majd röviden bemutatjuk a Robocar World Championship (vagy röviden OOCWC) rendszer felépítését és működését. A \ref{rttachapter}. fejezetben részletesen bemutatjuk a fejlesztett adatgyűjtő rendszert, a működésével szemben támasztott követelményeket és a tervezést (\ref{tervezes}. rész), a hardware (\ref{rttahw}. rész) és a software (\ref{rttasw}. rész) működését, valamint a felhasznált fejlesztőeszközöket (\ref{dev}. rész). A \ref{cstschapter}. fejezetben bemutatjuk a mért adatokon alapuló szimulációt. A \ref{results}. fejezetben bemutatjuk az eredményeinket, a \ref{futureworks}. fejezetben a jövőbeli munkákat, illetve a rendszer továbbfejlesztésének lehetőségeit tárgyaljuk.
 A \ref{summary}. fejezetben összegezzük a dolgozatot.
 
 \chapter{Kapcsolódó kutatások és fejlesztések}
@@ -449,10 +449,26 @@ A másik szimulációs algoritmus az ún. hangyaszimuláció. Ennek lényege, ho
 
 Célunk tehát, hogy egy olyan szimulációs algoritmust fejlesszünk, amely tartja azt az eloszlást, amelyet a mérések adnak a számunkra.
 
+Az adatgyűjtés kapcsán fontos a validáció. Több, jelenleg is működő rendszer végez adatgyűjtést (pl. Google Maps), de azok sokszor nem elég jó felbontásúak, valamint nem adnak 100\%-os képet az aktuális viszonyokról. A validáló módszer a terveink szerint egy olyan alrendszer kidolgozásán alapul, ahol az egyes adatgyűjtő rendszerek egy súlyozott kombinációját számolnánk, ahol a súlyokat egy paraméterhalmazként tekintenénk. Ezt a paraméterhalmazt szimulált hűtéssel finomítanánk, ahol a célhőmérsékletet egy ground-truth értékkel biztosítanánk. A ground-truth értéket az OOCWC Human controlled Sensor Annotations (Emberi Mérések) alrendszere adná. Szükséges tehát ennek az alrendszernek a kifejlesztése is, ahol az egyes mérésben résztvevők a saját mobiltelefonjukon futó, erre a célra kifejlesztett software-eket használnák.
+
 \chapter{Összefoglalás}
 \label{summary}
 
-\todo[inline]{Max 2 oldalas összegzés.}
+A Smart City kutatási-fejlesztési terület egyre aktívabb. Folyamatosan látnak napvilágot olyan IT megoldások, amelyek a városi lakosság mindennapjait hivatottak megkönnyíteni. Kiemelt terület a városi közlekedés, mely a prognosztizált népesség áthelyeződéssel egyre több problémával fog szembesülni. Fontos cél, hogy a növekvő urbanizáció mellett egy intelligens, kiszámítható, környezetbarát közlekedési metodika jellemezze a hétköznapokat.
+
+A közlekedést tekintve az autóipar egy paradigmaváltás közepén van. Egyrészt az önjáró autók kutatása, fejlesztése egyre több nagy gyártó látókörébe kerül, ahol az úttörönek számító Google már a piaci bevezetés folyamatában van. Másrészről a hagyományosan fosszilis energiahordozókon alapuló hajtásláncok is a megújuló, elektromos energiát hasznosító járműveknek adják át a piaci kínálatot.
+
+A fenti okok indukálták a dolgozat témájául szolgáló adatgyűjtő rendszert. Fontos, hogy a közlekedés folyamatos monitorozásával képet kapjunk a városban található viszonyokról. 
+
+A dolgozat témájául szolgáló Real-time Traffic Analyzer egy járművekbe építhető hardware és software komponensek együttese. A tervezése során minden olyan tényezőt figyelembe vettünk, mellyel a hatékonyságát maximalizálhatjuk. A rendszer képes valós időben forgalmat mérni a forgalmi egység környezetében, előfeldolgozással kinyerni a nyers videóállományból a számunkra releváns adatokat, valamint a pontos pozíciójával együtt elküldeni egy szerveralkalmazásnak. Az adatgyűjtő eszköz egy tesztelési folyamatot már teljesített, ahol Debrecen egy kis részét mértük fel.
+
+A próbamérés során szerzett adatokat egy egyszerű szöveges file-ban reprezentáltuk, majd bementként adtuk a Robocar World Championship framework Robocar City Emulatorának. Az OOCWC rendszer alkalmasnak bizonyult a feladatra, képes volt az RTTA által gyűjtött adatok alapján, azzal egyező eloszlásban inicializálni egy szimulációt. Mivel a rendszer alapvetően könnyen testreszabható különféle szcenáriókra, így csak egy rövid fejlesztési folyamatot igényelt ennek beépítése.
+
+Ugyan a rendszer -- egy rövid fejlesztés után -- képes volt fogadni az adatokat, megmutattuk, hogy a szimulációs algoritmus nem alkalmas valós városi közlekedés szimulációjára. Az eloszlástartó algoritmus fejlesztése jelenleg is folyamatban van. 
+
+Lényeges összetevője lesz a rendszernek a Robocar City Cloud, mely az adatok fogadását, azok aggregációját, elemzését fogja végezni. Az általunk gyűjtött adatokat folyamatosan fogjuk validálni mind kézi méréssel, mind más szolgáltatók által végzett mérésekkel.
+
+Reményeink szerint az RTTA és az OOCWC hamarosan alkalmas lesz éles bevetésre is. Ezáltal, valamint a robotautók várható elterjedésével nem túlzás kijelenteni, a Smart City kutatási, fejlesztési terület át fogja adni a helyét egy új, izgalmas területnek, amelyet Automated City néven fogunk ismerni.
 
 \addcontentsline{toc}{chapter}{Irodalomjegyzék}
 
