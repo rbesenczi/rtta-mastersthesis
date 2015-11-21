@@ -92,21 +92,34 @@
 \vspace*{2.8cm}
 
 {\LARGE\bf Tömegérzékeléses adatgyűjtés okos közlekedési alkalmazásokhoz}
-\vspace*{7cm}
+\vspace*{6cm}
 
 
 {\large
 \begin{tabular}{c@{\hspace{3cm}}c}
 \emph{Témavezető:}      &       \emph{Készítette:}\\
 \bf{dr. Bátfai Norbert} &       \bf{Besenczi Renátó}\\
-egyetemi adjunktus      &        mérnökinformatikus hallgató\\
+egyetemi adjunktus      &        mérnök informatikus hallgató\\
 \end{tabular}
 }
 
 \vspace*{1cm}
+
+\begin{center}
+{\large
+\begin{tabular}{c}
+\vspace{5mm}
+{A dolgozat leadásához hozzájárulok.}\\
+
+\makebox[3in]{\hrulefill}  \\
+dr. Bátfai Norbert\\
+\end{tabular}
+}
 \end{center}
 
-\vspace{45mm}
+\end{center}
+
+\vspace{25mm}
 \begin{center}
 {\Large
 Debrecen
@@ -184,9 +197,9 @@ Ez alapján a rendszer egyes elemei:
 
 A rendszer többcélú. Egyrészt egy kutatási platformot kínál forgalomelemzésre, szimulációkra. A szimuláció az OpenStreetMap \cite{osm} térképein fut, típusát tekintve a Nagel-Schreckenberg modell \cite{nasch} egy változatának tekinthető, egy cella-alapú megoldás. A rendszer egyik alapkövetelménye, hogy nagyszámú forgalmi egység is reprezentálható legyen. Hasonló esetet mutat be a \cite{singapore} tanulmány, ahol $10^6$ darab járművet szimuláltak. Fontos megjegyezni, hogy ebben a tanulmányban leírt szimuláció nem realisztikus, mivel az egyes egységek nem önálló ágensek. Realisztikus szimulációra is találhatunk példát, \cite{realsim}.
 
-A rendszer másik célja, hogy egy verseny segítségével találjuk meg a lehető legjobb forgalomirányító algoritmust. A rendszer készítő már több sikeres versenyt is lebonyolítottak a Debreceni Egyetem Informatikai Karán \cite{competitions}. Nem ritka, hogy egy-egy kutatási platform versenyezteti a felhasználókat. Erre talán az egyik legjobb példa a mesterséges intelligencia területén a RoboCup \cite{robocup}. 
+A rendszer másik célja, hogy egy verseny segítségével találjuk meg a lehető legjobb forgalomirányító algoritmust. A rendszer készítői már több sikeres versenyt is lebonyolítottak a Debreceni Egyetem Informatikai Karán \cite{competitions}. Nem ritka, hogy egy-egy kutatási platform versenyezteti a felhasználókat. Erre talán az egyik legjobb példa a mesterséges intelligencia területén a RoboCup \cite{robocup}. 
 
-A rendszer kutatói-fejlesztői folyamata az agilis metodikát követi, gyors prototípusfejlesztéssel az egyes komponensekre. Jelenleg az emulátort tekintve két implementáció létezik, egyrészt a ``Justine'' \cite{oocwcrepo} , másrészt a ``Justina'' \cite{justinarepo}. Mindkét megvalósítás nyílt forráskódú. A rendszerről további információk olvashatóak a \cite{7231223}, valamint \cite{infocomjournal} közleményekben, a ``Justina'' részletes implementációja pedig a \cite{mamenyak2015robotauto} szakdolgozatban.
+A rendszer kutatói-fejlesztői folyamata az agilis metodikát követi, gyors prototípusfejlesztéssel az egyes komponensekre. Jelenleg az emulátort tekintve két implementáció létezik, egyrészt a ``Justine'' \cite{oocwcrepo}, másrészt a ``Justina'' \cite{justinarepo}. Mindkét megvalósítás nyílt forráskódú. A rendszerről további információk olvashatóak a \cite{7231223}, valamint \cite{infocomjournal} közleményekben, a ``Justina'' részletes implementációja pedig a \cite{mamenyak2015robotauto} szakdolgozatban.
 
 Kiemelendő, hogy a rendszer magas fokú alkalmazkodóképességgel rendelkezik. Más és más jellegű útvonaltervezés szükséges kormányzati közlekedéshez, vészhelyzetek esetében, stb. Az oktatási és kutatási oldal támogatására került kifejlesztésre a ``Police Edition'' (egy-egy pillanatkép ebből a változatból a \ref{police} ábrán látható). A cél, hogy rendőr ágensekkel, melyeket a kutató által implementált irányító algoritmus vezérel, minél több gengszter ágenst kapjunk el. Egy ilyen implementációra láthatunk példát a \cite{forkcoginfocom} absztraktban.
 
@@ -227,7 +240,7 @@ Ebben a fejezetben részletesen leírjuk a tervezés lépéseit, milyen szempont
 \section{Tervezés}
 \label{tervezes}
 
-A Robocar City Emulator (RCE) bemeneteként szolgáló adatokat a Robocar City Cloud fogja tárolni. (Jelenleg még nincs ilyen felhőimplementációnk.) Ez az adatbázis fogja tárolni annak a városnak az adatait, ahol az RCE működik. Ahogyan azt már korábban említettük, kétféle adatgyűjtő rendszer-megközelítés létezik. Egyrészt egy közösségi adatgyűjtés, ahol az adatgyűjtők aktív részvétele szükséges egy-egy folyamat megfigyeléséhez és annotálásához. Az OOCWC rendszer sémájában ez a Human controlled Sensor Annotations (HSA) modulnak felel meg. Itt elsősorban olyan mobiltelefonos alkalmazások fogunk kifejleszteni, amely egyszerű grafikus felülettel rendelkezik. Egy használati mód, hogy a megfigyelő egy útszakaszon elhaladó járműveket a mobiltelefon egy softkey-ének a lenyomásával annotálja. A rendszer fejlesztésének jelenlegi fázisában ez a típusú adatgyűjtés még nem implementált.
+A Robocar City Emulator (RCE) bemeneteként szolgáló adatokat a Robocar City Cloud fogja tárolni. (Jelenleg még nincs ilyen felhőimplementációnk.) Ez az adatbázis fogja tárolni annak a városnak az adatait, ahol az RCE működik. Ahogyan azt már korábban említettük, kétféle adatgyűjtő rendszer-megközelítés létezik. Egyrészt egy közösségi adatgyűjtés, ahol az adatgyűjtők aktív részvétele szükséges egy-egy folyamat megfigyeléséhez és annotálásához. Az OOCWC rendszer sémájában ez a Human controlled Sensor Annotations (HSA) modulnak felel meg. Itt elsősorban olyan mobiltelefonos alkalmazást fogunk kifejleszteni, amely egyszerű grafikus felülettel rendelkezik. Egy használati mód, hogy a megfigyelő egy útszakaszon elhaladó járműveket a mobiltelefon egy softkey-ének a lenyomásával annotálja. A rendszer fejlesztésének jelenlegi fázisában ez a típusú adatgyűjtés még nem implementált.
 
 A másik adatgyűjtő mód az automatikus adatgyűjtés vagy crowd-sensing. Ez a rendszer sémájában a Automatic Sensor Annotations (ASA) modulnak felel meg. Az általunk fejlesztett hardware eszközök felhasználói beavatkozás nélkül képesek adatgyűjtésre. A tervezés első lépéseként meghatároztuk a rendszerrel szemben támasztott alapvető követelményeket. Az alábbiakban összegezhetjük:
 
@@ -390,7 +403,7 @@ A mért adatok alapján inicializált szimuláció kezdőállapotát a \ref{simu
 
 Látható, hogy az OOCWC rendszer fontos építőeleme az adatgyűjtő rendszer. Ahhoz, hogy valós eseményeket szimuláljunk (például útvonaltervezés, valós forgalomszimulációk) a valós világból vett adatokra van szükségünk. Ezt a célt szem előtt tartva, kifejlesztettünk egy tömegérzékelés elven működő rendszert. Az eszköz ARM alapú hardware és software együttese, amely a közeljövőben alkalmas lesz arra, hogy beépítsük forgalomban részt vevő járművekbe. Megjegyezzük, hogy egy kezdetleges tesztelést már végeztünk. Ebben a kísérletben Debrecen néhány utcáját vizsgáltuk és az így kapott adatokat a Robocar City Emulator bemeneteként használtuk. Az adatgyűjtő rendszer neve Real-time Traffic Analyzer, az erre, valamint az OOCWC rendszerre épülő projekt neve Crowd-sourced Traffic Simulator.
 
-A kifejlesztett adatgyűjtő eszköz, amelyet folyamatosan mozgó járművekbe fogunk telepíteni képes forgalmat mérni, konkrétan a környezetében kialakult forgalmi helyzetet. Fontos megjegyezni, hogy a rendszer újszerűségét az adja, hogy az eszköz folyamatosan mozgásban van. Több, hasonló célra fejlesztett adatgyűjtő rendszer üzemel, de azok mind fix telepítésűek. Emiatt minden egyes speciális tényezőt figyelembe kellett vennünk a tervezés során. Az eszköz központi eleme egy fejlesztői kártya, amely jelenleg egy Digilent Zybo. Ez a kártya egy FPGA-t és egy ARM processzor tartalmaz, melyek egymást kiegészítve működnek. Az FPGA végzi az I/O rendszer kezelését, az ARM processzor a képfeldolgozást végzi. Mivel az eszköz folyamatosan mozgásban van, szükséges volt egy GPS modul is, így meghatározhatjuk az eszköz pontos helyét, valamint az egyes gyakoriságértékeket utcákhoz rendelhetjük. Maga a képfeldolgozás egy Haar-cascade alapú osztályozás, és egy erre épülő objektumfelismerés. A videostream-et egy kameramodultól kapjuk 640$\times$480 pixel felbontásban. Az adatokat előfeldolgozás után mobilinterneten küldjük a szerveralkalmazásunknak egy szabványos GSM modul segítségével.
+A kifejlesztett adatgyűjtő eszköz, amelyet folyamatosan mozgó járművekbe fogunk telepíteni képes forgalmat mérni, konkrétan a környezetében kialakult forgalmi helyzetet. Fontos megjegyezni, hogy a rendszer újszerűségét az adja, hogy az eszköz folyamatosan mozgásban van. Több, hasonló célra fejlesztett adatgyűjtő rendszer üzemel, de azok mind fix telepítésűek. Emiatt minden egyes speciális tényezőt figyelembe kellett vennünk a tervezés során. Az eszköz központi eleme egy fejlesztői kártya, amely jelenleg egy Digilent Zybo. Ez a kártya egy FPGA-t és egy ARM processzor tartalmaz, melyek egymást kiegészítve működnek. Az FPGA végzi az I/O rendszer kezelését, az ARM processzor pedig a képfeldolgozást. Mivel az eszköz folyamatosan mozgásban van, szükséges volt egy GPS modul is, így meghatározhatjuk az eszköz pontos helyét, valamint az egyes gyakoriságértékeket utcákhoz rendelhetjük. Maga a képfeldolgozás egy Haar-cascade alapú osztályozás, és egy erre épülő objektumfelismerés. A videostream-et egy kameramodultól kapjuk 640$\times$480 pixel felbontásban. Az adatokat előfeldolgozás után mobilinterneten küldjük a szerveralkalmazásunknak egy szabványos GSM modul segítségével.
 
 A Zybo fejlesztői kártya jelenleg elegendő, de ha bővíteni szeretnénk új funkciókkal, könnyen lehet, hogy kevésnek bizonyul. Problémát okozhat, ha szeretnénk bizonyos képi előfeldolgozást végezni a SoC FPGA részében. A perifériák jól működnek, de valószínűleg a kommunikációs interface-t egy USB-s mobilstickkel fogjuk helyettesíteni.
 
