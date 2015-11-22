@@ -251,9 +251,9 @@ A másik adatgyűjtő mód az automatikus adatgyűjtés vagy crowd-sensing. Ez a
 \item Egyszerűen beszerelhető járművekbe.
 \end{itemize}
 
-A fejlesztést három irányban képzeltük el. A fő különbséget a hardware-ben található processzor (vagy annak hiánya) jelenti. Ami az egyes megoldásokban közös, hogy mindegyikben megtalálható egy FPGA (Field Programmable Gate Array), valamint az egyes perifériák. Bementként egy képszenzort és a GPS vételére alkalmas modult használtunk, kimenetként egy szabványos GSM modult alkalmaztunk. A fejlesztés ún. development boardokon lehetséges. Az egyes hardware designokat az alábbiakban részletezzük.
+A fejlesztést három irányban képzeltük el. A fő különbséget a hardware-ben található processzor (vagy annak hiánya) jelenti. Ami az egyes megoldásokban közös, hogy mindegyikben megtalálható egy FPGA (Field Programmable Gate Array), valamint az egyes perifériák. Bementként egy képszenzort és a GPS vételére alkalmas modult használtunk, kimenetként egy szabványos GSM modult alkalmaztunk. A fejlesztés egy ún. development boardon végeztük el. Az egyes hardware designokat az alábbiakban részletezzük.
 
-{\bf{ARM alapú megoldás.}} Ennél a típusnál az FPGA gyorsaságát az I/O rendszer valamint a memória kezelésére használjuk fel. Az ARM processzor egy szabványos opciót kínál számunkra számításokhoz, képfeldolgozó algoritmusok futtatásához. A rendszer fő előnye, hogy könnyedén használhatunk egy Beágyazott Linux Rendszert (Embedded Linux System -- ELS), tehát a magas szintű feldolgozási folyamatokat egy szabványos Linux/UNIX környezetben implementálhatjuk. Ilyen ARM alapú, beágyazott rendszerrel szállított eszköz például a Raspberry Pi single-board számítogép.
+{\bf{ARM alapú megoldás.}} Ennél a típusnál az FPGA gyorsaságát az I/O rendszer valamint a memória kezelésére használjuk fel. Az ARM processzor egy szabványos opciót kínál számunkra számításokhoz, képfeldolgozó algoritmusok futtatásához. A rendszer fő előnye, hogy könnyedén használhatunk egy Beágyazott Linux Rendszert (Embedded Linux System -- ELS), tehát a magas szintű feldolgozási folyamatokat egy szabványos Linux/UNIX környezetben implementálhatjuk. Ilyen ARM alapú, beágyazott rendszerrel szállított eszköz például a Raspberry Pi single-board számítogép (igaz, ebben FPGA nincs, csak ARM processzor).
 
 {\bf{Soft-processor alapú megoldás.}} Ennél a típusnál nincs fizikailag jelen a processzor, nekünk kell a hardware designhoz hozzáadnunk egy előre definiáltat. (Például a Xilinx Micro-Blaze processzort.) Ebben az esetben mi definiáljuk a processzor pontos működését, de az utasításkészlete limitáló tényező. ELS alkalmazására -- hasonlóan az ARM alapú megoldáshoz -- itt is van lehetőségünk.
 
@@ -263,7 +263,7 @@ A fejlesztést három irányban képzeltük el. A fő különbséget a hardware-
 
 \section{Technológiai áttekintés}
 
-Az adatgyűjtő rendszert első körben egy ARM alapú hardware-eszközre fejlesztettük ki. A projekt megvalósításához szükségünk volt egy olyan eszközre, amely sokkal rugalmasabb fejlesztést tesz lehetővé. Ezért például a Raspberry Pi single-board számítógép a szűkös előforrásai, valamint limitált periferizálhatósága miatt nem volt alkalmas a számunkra. (Megjegyezzük, hogy ez csak az eszköz első generációjára érvényes, a második generációs Rapsberry Pi 2 már elfogadható lenne, de az csak a fejlesztés után kerül piacra.) Mivel az ARM egy igen elterjedt processzorcsalád, ezért könnyen elérhetőek fordítóprogramok, illetve egy Beágyazott Linux Rendszer használata is egyszerű. A fent említettek miatt a választásunk egy Zynq System-on-chip (SoC) rendszerre esett.
+Az adatgyűjtő rendszert első körben egy ARM alapú hardware-eszközre fejlesztettük ki. A projekt megvalósításához szükségünk volt egy olyan eszközre, amely sokkal rugalmasabb fejlesztést tesz lehetővé. Ezért például a Raspberry Pi single-board számítógép a szűkös előforrásai, valamint limitált periferizálhatósága miatt nem volt alkalmas a számunkra. (Megjegyezzük, hogy ez csak az eszköz első generációjára érvényes, a második generációs Rapsberry Pi 2 már elfogadható lenne, de az csak a fejlesztés után kerül piacra.) Mivel az ARM egy igen elterjedt architektúra, ezért könnyen elérhetőek fordítóprogramok, illetve egy Beágyazott Linux Rendszer használata is egyszerű. A fent említettek miatt a választásunk egy Zynq System-on-chip (SoC) rendszerre esett.
 
 Ebben a fejezetben részletesen leírjuk a rendszer hardware- illetve software-komponenseit valamint azok működését.
 
@@ -287,7 +287,7 @@ Video Direct Memory Access-t (VDMA) alkalmazunk, amely a memória és a kameramo
 
 A céljaiknak a Vincotech A1080-A GPS vevő modulja alkalmasnak tűnik. Minimális külső kompenenseket igényel és egyszerűen soros porton kommunikál. A modul 1 PPS időközönként küld adatot. Ezeket az adatokat a Linux rendszeren futó alkalmazásunk dolgozza fel (lásd a következő fejezetet). A pontos idő és a pozíció fontos a számunkra. A Peripheral Module (PMOD) által leadott áram elegendő ennek a modulnak.
 
-A mobilinternet (GPRS) eléréséhez egy SIM900 GSM modult használtunk. Mivel ez a modul 5V feszültséget igényel, a Zybo belső áramforrására kapcsoltuk. Mivel ilyen kapcsolás esetén a kezdeti áramfelvétel (az ún. initial peak) problémákat tud okozni, ezért erre a jövőben kiemelt figyelmet kell fordítani. Szerencsére a vezeték jelen esetben elbírta a modult, de problémák léphetnek fel, ha egy jármű áramforrásáról próbáljuk az eszközt táplálni.
+A mobilinternet (GPRS) eléréséhez egy SIM900 GSM modult használtunk. Mivel ez a modul 5V feszültséget igényel, a Zybo külső áramforrására kapcsoltuk direktben. Mivel ilyen kapcsolás esetén a kezdeti áramfelvétel (az ún. initial peak) problémákat tud okozni, ezért erre a jövőben kiemelt figyelmet kell fordítani. Szerencsére az általunk alkalmazott tápegység jelen esetben elbírta a modult, de problémák léphetnek fel, ha egy jármű áramforrásáról próbáljuk az eszközt táplálni.
 
 Képrögzítéshez szerettünk volna egy könnyen paraméterezhető eszközt használni, például egy webkamera helyett. Így esett a választásunk az OV7670-es modulra, könnyen beszerezhető, illetve maximális felbontása (640$\times$480 pixel) elegendő a számunkra. Előnye, hogy paraméterezhető a működése, így pontosan beállíthatjuk a mi igényeinknek megfelelően, illetve a rendszerbe illeszthetősége egyszerűbb. Ennek következménye, hogy a videostream előfeldolgozása nem veszi igénybe a processzort, így az kevésbé válik leterheltté. Jelenleg még nincs hardware szinten előfeldolgozás a rendszerben, de tervezzük egy HLS alapú OpenCV megoldás beépítését.
 
@@ -307,7 +307,7 @@ Itt jegyezzük meg, hogy a rendszer még nem építhető be civil használatra j
 \subsection{Software}
 \label{rttasw}
 
-Ahogyan azt korábban említettük, az ARM alapú fejlesztői kártyán lehetőségünk van Linux rendszert futtatni. Mi a Linaro mellett döntöttünk, amely egy nyílt forráskódú, Ubuntu Linux alapú, kifejezetten ARM SoC rendszerekre tervezett operációs rendszer. 
+Ahogyan azt korábban említettük, az ARM alapú fejlesztői kártyán lehetőségünk van Linux rendszert futtatni. Mi a Linaro mellett döntöttünk, amely egy nyílt forráskódú, Ubuntu Linux alapú, kifejezetten ARM SoC rendszerekre optimalizált operációs rendszer. 
 
 Az ezen futó software három részből épül fel.
 
@@ -335,7 +335,7 @@ Látható, hogy az eszköz nem a nyers képi adatot küldi a szerverünknek, han
 
 \lstinputlisting[language=C, caption=Protocol Buffers üzenetformátum, label=protoobject]{src/TrafficAnalytics.proto}
 
-A rendszerhez a tesztelhetőség érdekében készítettünk egy asztali PC-n futtatható alkalmazást. A program egy MQTT szerver alkalmazás, amihez az egyes adatgyűjtő eszközök kapcsolódnak, ide küldik az általuk gyűjtött adatokat. A program bemenete tehát az eszközökről érkező adatok, kimenete pedig egy egyszerű szöveges file, amely az OOCWC rendszer bemeneteként szolgál. Erről részletesebben a következő fejezetben beszélünk.
+A rendszerhez a tesztelhetőség érdekében készítettünk egy asztali PC-n futtatható alkalmazást. A program egy MQTT bróker alkalmazás, amihez az egyes adatgyűjtő eszközök kapcsolódnak, ide küldik az általuk gyűjtött adatokat. A program bemenete tehát az eszközökről érkező adatok, kimenete pedig egy egyszerű szöveges file, amely az OOCWC rendszer bemeneteként szolgál. Erről részletesebben a következő fejezetben beszélünk.
 
 \section{Fejlesztőeszközök}
 \label{dev}
