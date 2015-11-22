@@ -160,7 +160,7 @@ A \ref{summary}. fejezetben összegezzük a dolgozatot.
 
 \section{Kitekintés}
 
-A Okos Város kutatási, fejlesztési terület jelentős szerepet fog játszani az következő évtizedekben. Előrejelzések szerint 2023-ig több mint 170 milliárd dollár beruházás fog megvalósulni világszerte \cite{navigant}. A különböző informatikai megoldások egyre nagyobb számban vannak jelen a hétköznapokban már napjainkban is, mint például a VITAL \cite{vital}, a FI\-Ware \cite{fiware} vagy az iCity \cite{icity}. Ezen felül egyre több kezdeményezés tesz kísérletet arra, hogy a városi lakosság hétköznapjait okosabbá és biztonságosabbá tegye (\cite{smartsantander}, \cite{futureglasgow}, \cite{myneighbourhood}). Emellett sok tanulmány foglalkozik a smart city fogalomkörével, illetve hogyan mérhető egy város ``smartsága'' (\cite{yamauchi2014development}, \cite{neirotti2014current}, \cite{de2014smart}, \cite{carli2013measuring}). A \cite{giffinger2007smart} tanulmány egy sorrendet is felállított az európai városokról ``smartság'' tekintetében. A vészhelyzetek kezelése is kiemelt szerepet kap (például \cite{du2012research}). A témánkhoz kapcsolódóan megemlíthető, hogy a \cite{mohan2008nericell} szerzői egy mobiltelefon alapú, automatikus forgalommérő rendszert fejlesztettek.
+A Okos Város kutatási, fejlesztési terület jelentős szerepet fog játszani az következő évtizedekben. Előrejelzések szerint 2023-ig több mint 170 milliárd dollár beruházás fog megvalósulni világszerte \cite{navigant}. A különböző informatikai megoldások egyre nagyobb számban vannak jelen a hétköznapokban már napjainkban is, mint például a VITAL \cite{vital}, a FI\-Ware \cite{fiware} vagy az iCity \cite{icity}. Ezen felül egyre több kezdeményezés tesz kísérletet arra, hogy a városi lakosság hétköznapjait okosabbá és biztonságosabbá tegye (\cite{smartsantander}, \cite{futureglasgow}, \cite{myneighbourhood}). Emellett sok tanulmány foglalkozik a smart city fogalomkörével, illetve hogyan mérhető egy város ``okossága'' (\cite{yamauchi2014development}, \cite{neirotti2014current}, \cite{de2014smart}, \cite{carli2013measuring}). A \cite{giffinger2007smart} tanulmány egy sorrendet is felállított az európai városokról ``okosság'' tekintetében. A vészhelyzetek kezelése is kiemelt szerepet kap (például \cite{du2012research}). A témánkhoz kapcsolódóan megemlíthető, hogy a \cite{mohan2008nericell} szerzői egy mobiltelefon alapú, automatikus forgalommérő rendszert fejlesztettek.
 
 Látható, hogy a Smart City kutatási, fejlesztési terület lassan iparággá növi ki magát, mindenképpen komoly jövő előtt áll.
 
@@ -210,7 +210,7 @@ Az OOCWC rendszerben a szimulációt a gyűjtött adatok alapján inicializálju
 \subfigure{\includegraphics[width=5.3in]{img/m3}\label{p1}}
 \quad
 \subfigure{\includegraphics[width=5.3in]{img/m4}\label{p2}}
-\caption{Pillanatkép a rendszer ``Police Edition'' változatából. A térkép a OSM egy részlete, Manhattan, New York City, USA. A megjelenítést a JXMapViewer2 \cite{jxmapv} biztosítja. A térképen a routine car rózsaszínnel, a gengszter ágensek pirossal (smart car), a rendőrágensek (guided car) kékkel jelölve. Forrás: \cite{infocomjournal} \label{police}}
+\caption{Pillanatkép a rendszer ``Police Edition'' változatából. A térkép az OSM egy részlete, Manhattan, New York City, USA. A megjelenítést a JXMapViewer2 \cite{jxmapv} biztosítja. A térképen a routine car rózsaszínnel, a gengszter ágensek pirossal (smart car), a rendőrágensek (guided car) kékkel jelölve. Forrás: \cite{infocomjournal} \label{police}}
 \end{figure}
 
 \section{Ismerkedés az OOCWC rendszerrel}
@@ -263,7 +263,7 @@ A fejlesztést három irányban képzeltük el. A fő különbséget a hardware-
 
 \section{Technológiai áttekintés}
 
-Az adatgyűjtő rendszert első körben egy ARM alapú hardware-eszközre fejlesztettük ki. A projekt megvalósításához szükségünk volt egy olyan eszközre, amely sokkal rugalmasabb fejlesztést tesz lehetővé. Ezért például a Raspberry Pi single-board számítógép a szűkös előforrásai, valamint limitált periferizálhatósága miatt nem volt alkalmas a számunkra. (Megjegyezzük, hogy ez csak az eszköz első generációjára érvényes, a második generációs Raspberry Pi 2 már elfogadható lenne, de az csak a fejlesztés után kerül piacra.) Mivel az ARM egy igen elterjedt architektúra, ezért könnyen elérhetőek fordítóprogramok, illetve egy Beágyazott Linux Rendszer használata is egyszerű. A fent említettek miatt a választásunk egy Zynq System-on-chip (SoC) rendszerre esett.
+Az adatgyűjtő rendszert első körben egy ARM alapú hardware-eszközre fejlesztettük ki. A projekt megvalósításához szükségünk volt egy olyan eszközre, amely sokkal rugalmasabb fejlesztést tesz lehetővé. Ezért például a Raspberry Pi single-board számítógép a szűkös erőforrásai, valamint limitált periferizálhatósága miatt nem volt alkalmas a számunkra. (Megjegyezzük, hogy ez csak az eszköz első generációjára érvényes, a második generációs Raspberry Pi 2 már elfogadható lenne, de az csak a fejlesztés után kerül piacra.) Mivel az ARM egy igen elterjedt architektúra, ezért könnyen elérhetőek fordítóprogramok, illetve egy Beágyazott Linux Rendszer használata is egyszerű. A fent említettek miatt a választásunk egy Zynq System-on-chip (SoC) rendszerre esett.
 
 Ebben a fejezetben részletesen leírjuk a rendszer hardware illetve software komponenseit valamint azok működését.
 
@@ -279,7 +279,7 @@ A rendszer sémája a \ref{rttaschema} ábrán, a részletes felépítése pedig
 \label{rttaschema}
 \end{figure}  
 
-A fejlesztést a Digilent Zybo development boardján végeztük \cite{zybo}. Ahogyan az a sematikus ábrán is látható, a rendszer központi eleme a Zynq Processing System, kiegészülve a Processor System Resettel. Az egyes eszközöket az Advanced Extensible Interface (röviden AXI, \cite{xilinx1999reference}) busz protokollon keresztül kapcsoltuk egymáshoz. Ez a protokoll egy szabványosított megoldást biztosít az egyes komponensek egymáshoz kapcsolására. A két fő komponens a két UartLite soros port. A GPS modullal az \texttt{axi\_uartlite\_0} soros porton kommunikálhatunk, mely 4800 bauddal küldi a GPS 1 PPS adatait. (A GPS 1 másodpercenként küldi a kódméréshez szükséges adatcsomagokat.) A GSM modullal az \texttt{axi\_uartlite\_1} soros porton kommunikálhatunk 115200 bauddal. Az \texttt{ov7670\_top\_0} modul kiolvassa a kamerából a videóadatokat, majd AXI kompatibilis streammé alakítja. Az \texttt{axi\_vdma\_0} betölti a memóriába a kamerából érkező adatokat az \texttt{axi\_interconnect\_0} modulon keresztül.
+A fejlesztést a Digilent Zybo development boardján végeztük \cite{zybo}. Ahogyan az a sematikus ábrán is látható, a rendszer központi eleme a Zynq Processing System, kiegészülve a Processor System Resettel. Az egyes eszközöket az Advanced Extensible Interface (röviden AXI, \cite{xilinx1999reference}) busz protokollon keresztül kapcsoltuk egymáshoz. Ez a protokoll egy szabványosított megoldást biztosít az egyes komponensek egymáshoz kapcsolására. A két fő komponens a két UartLite soros port. A GPS modullal az \emph{axi\_uartlite\_0} soros porton kommunikálhatunk, mely 4800 bauddal küldi a GPS 1 PPS adatait. (A GPS 1 másodpercenként küldi a kódméréshez szükséges adatcsomagokat.) A GSM modullal az \emph{axi\_uartlite\_1} soros porton kommunikálhatunk 115200 bauddal. Az \emph{ov7670\_top\_0} modul kiolvassa a kamerából a videóadatokat, majd AXI kompatibilis streammé alakítja. Az \emph{axi\_vdma\_0} betölti a memóriába a kamerából érkező adatokat az \emph{axi\_interconnect\_0} modulon keresztül.
 
 A kommunikáció az egyes perifériák között az AXI buszon történik. Ennek a busznak 100 MHz-es alapórajele van, a kamera adatok továbbításáért 150 MHz-es másodlagos órajelet alkalmazunk.
 
@@ -332,9 +332,9 @@ A GPS modul egyszerűen kiolvassa az eszközről érkező, számunkra lényeges 
 
 \lstinputlisting[language=C++, caption=A GPS adatstruktúra a számunkra lényeges adatokkal, label=gpsstruct]{src/gpsstruct.cpp}
 
-Kommunikációs protokollnak az MQTT-t választottuk. Az MQTT egy kifejezetten a \texttt{machine-to-machine} típusú kommunikációra kifejlesztett, alacsony overhead-del bíró protokoll. Alapjaiban egy publish/subscribe paradigmát követő megoldás. Kifejezetten jó alacsony fogyasztású eszközök, illetve kis kommunikációs sávszélesség esetén \cite{mqtt}. 
+Kommunikációs protokollnak az MQTT-t választottuk. Az MQTT egy kifejezetten a \emph{machine-to-machine} típusú kommunikációra kifejlesztett, alacsony overhead-del bíró protokoll. Alapjaiban egy publish/subscribe paradigmát követő megoldás. Kifejezetten jó alacsony fogyasztású eszközök, illetve kis kommunikációs sávszélesség esetén \cite{mqtt}. 
 
-A képfeldolgozó algoritmus egy Haar-cascade osztályozáson alapú objektumfelismerés \cite{violacascade} \cite{haaremp}. Az osztályozás alapjául szolgáló betanított cascade file forrása: \cite{cascade}. A videóstream inicializálása után, minden egyes képet egy Mat típusú objektumban tárolunk, majd a \ref{detectimage} kódrészlettel objektumokat keresünk. 
+A képfeldolgozó algoritmus egy Haar-cascade osztályozáson alapuló objektumfelismerés \cite{violacascade} \cite{haaremp}. Az osztályozás alapjául szolgáló betanított cascade file forrása: \cite{cascade}. A videóstream inicializálása után, minden egyes képet egy Mat típusú objektumban tárolunk, majd a \ref{detectimage} kódrészlettel objektumokat keresünk. 
 
 \lstinputlisting[language=C++, caption=Objektumdetektálás OpenCV-ben, label=detectimage]{src/detectimg.cpp}
 
@@ -386,7 +386,7 @@ Könnyen belátható, hogy $\sum_{i=1}^{N}\sum_{j=1}^{n_i}P(s_i^j) = 1$.
 
 Tehát a járműveket a szimuláció kezdőállapotában a mért adatok alapján inicializáljuk. Innen indíthatjuk a szimulációt és megfigyelhetjük a szimulációs algoritmus működését.
 
-Az alap OOCWC rendszert szükséges volt egy új osztállyal bővítenünk. Ebben az osztályban reprezentáljuk a valós adatokon alapuló forgalmat. Az új osztály az alap Traffic osztály kiterjesztése (az ősosztály működését lásd az OOCWC projekt dokumentációjában \cite{oocwcrepo}), új tagjai többek között a mért eloszlás adatai, valamint a fent leírt inicializáló módszer alapján egy függvény. Az osztályból a \ref{trafobj}. forráskódrészletben látható módon készítünk egy példányt, amennyiben a célunk a valós adatokon alapuló szimuláció futtatása. Látható, hogy az osztály konstruktorában az \texttt{itype} változóval jelezzük, hogy valós adatok alapján kívánjuk elhelyezni a forgalomban részt vevő járműveket a térképen.
+Az alap OOCWC rendszert szükséges volt egy új osztállyal bővítenünk. Ebben az osztályban reprezentáljuk a valós adatokon alapuló forgalmat. Az új osztály az alap Traffic osztály kiterjesztése (az ősosztály működését lásd az OOCWC projekt dokumentációjában \cite{oocwcrepo}), új tagjai többek között a mért eloszlás adatai, valamint a fent leírt inicializáló módszer alapján egy függvény. Az osztályból a \ref{trafobj}. forráskódrészletben látható módon készítünk egy példányt, amennyiben a célunk a valós adatokon alapuló szimuláció futtatása. Látható, hogy az osztály konstruktorában az \emph{itype} változóval jelezzük, hogy valós adatok alapján kívánjuk elhelyezni a forgalomban részt vevő járműveket a térképen.
 
 \lstinputlisting[language=C++, caption=A RealTraffic objektum példányosítása, label=trafobj]{src/trafficobj.cpp}
 
@@ -496,21 +496,42 @@ Reményeink szerint az RTTA és az OOCWC hamarosan alkalmas lesz éles bevetésr
 
 \chapter*{Egyéb tudnivalók}
 
+\noindent
+Jelen munka a Nemzeti Tehetség Program, Egyedi fejlesztést biztosító ösztöndíjak NTP-EFÖ-P-15-0187 számú pályázat keretei között készült. A projektet a Emberi Erőforrások Minisztériuma Emberi Erőforrás Támogatáskezelő támogatta.
+
+\begin{figure}[h!]
+\centering
+\subfigure{\includegraphics[width=2in]{img/emmi}}
+\subfigure{\includegraphics[width=3in]{img/emet}}
+\subfigure{\includegraphics[width=2in]{img/ntp}}
+\end{figure}
+
+\noindent
 A diplomamunka alapjául az alábbi közlemények szolgálnak:
 
+\noindent
 Bátfai, N.; {\bf{Besenczi, R.}}; Mamenyák, A.; Ispány, M., {\bf{"OOCWC: The Robocar World Championship Initiative,"}} in Telecommunications (ConTEL), 2015 13th International Conference on, pp.1-6, 13-15 July 2015, doi: 10.1109/ ConTEL.2015.7231223
 
+\noindent
 N. Bátfai, {\bf{R. Besenczi}}, A. Mamenyák and M. Ispány. {\bf{"Traffic Simulation based on the Robocar World Championship Initiative."}} INFOCOMMUNICATIONS JOURNAL, vol. 7, no. 3, 2015, pp. 50-59.
 
+\noindent
 {\bf{Besenczi R.}}; Katona T.; Szilágyi M., {\bf{"A Fork Implementation of the Police Edition of the OOCWC System,"}} in Cognitive Infocommunications (CogInfoCom), 2015 6th IEEE Conference on, pp.163-164, 19-21 Oct. 2015, doi: Not yet assigned
 
+\noindent
 {\bf{Besenczi R.}}; Szilágyi M.; Bátfai N.; Mamenyák A.; Oniga I.; Ispány M., {\bf{"Using Crowdsensed Information for Traffic Simulation in the Robocar World Championship Framework,"}} in Cognitive Infocommunications (CogInfoCom), 2015 6th IEEE Conference on, pp.333-337, 19-21 Oct. 2015, doi: Not yet assigned
 
+\noindent
 A Real-time Traffic Analyzer projekt nyílt forráskódú (GNU GPL v3), szabadon felhasználható és letölthető a projekt hivatalos tárolójából: \cite{rtta}.
 
+\noindent
 A Crowd-sourced Traffic Simulator projekt nyílt forráskódú (GNU GPL v3), szabadon felhasználható és letölthető a projekt hivatalos tárolójából: \cite{csts}.
 
+\noindent
 A Robocar World Championship hivatalos oldala, illetve a tároló: \cite{oocwcrepo}.
+
+\noindent
+A CSTS tárolójában található dokumentáció (\cite{csts}/real-time-traffic-analyzer/doc/traf-analy-eng-pdf) valamint telepítési útmutató (\cite{csts}/real-time-traffic-analyzer/XUP\_notes.txt) a diplomamunka mellékletének tekintendő.
 
 \addcontentsline{toc}{chapter}{Egyéb tudnivalók}
 
@@ -551,5 +572,21 @@ along with CSTS. If not, see <http://www.gnu.org/licenses/>.
 
 \chapter*{Köszönetnyilvánítás}
 \addcontentsline{toc}{chapter}{Köszönetnyilvánítás}
+
+\begin{singlespace}
+
+A szerző szeretne köszönetet mondani a Robocar World Championship, valamint a Smart City kutatócsoportok tagjainak. A kutatócsoport tagjai (a teljesség igénye nélkül): dr. Ispány Márton egyetemi docens, dr. Bátfai Norbert egyetemi adjunktus, Mamenyák András hallgatótársam, valamint a reguláris oktatásban részt vevő prog1-es és prog2-es hallgatók.
+
+Külön szeretném kiemelni, hogy témavezetőm, jóbarátom Bátfai Norbi munkája, építő tanácsai és kivételes öszintesége nélkül ma ezt a munkát nem olvashatná a kedves olvasó. Mindezekért külön köszönet illeti.
+
+Szeretnék köszönetet mondani dr. Oniga István docens úrnak, hogy használhattuk a munka elkészítéséhez szükséges eszközöket, valamint a fejlesztési folyamat során megosztott mérnöki tapasztalataiért.
+
+Nem tudok elég hálás lenni mérnök-hecker barátaimnak, kollégáimnak Szilágyi Mihálynak és Katona Tamásnak, hogy időt és energiát nem kímélve sikerült őket belerángatnom minden őrültségbe. :)
+
+A szerző szeretné megköszönni a segítséget mindenkinek, akik valamilyen formában hozzájárultak a dolgozat alapjául szolgáló publikációk, valamint jelen dolgozat elkészítéséhez. A lista rendkívül hosszú, a teljesség igénye nélkül: Prof. Joan Mattia Plubell, Monori Fanny, és még sokan mások.
+
+Végül, de nem utolsó sorban szeretnék köszönetet mondani szüleimnek, hogy a végletekig támogattak az úton, ami ennek a munkának a létrejöttéhez vezetett.
+
+\end{singlespace}
 
 \end{document}
