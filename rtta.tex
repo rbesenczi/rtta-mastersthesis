@@ -289,6 +289,13 @@ A céljaiknak a Vincotech A1080-A GPS vevő modulja alkalmasnak tűnik. Minimál
 
 A mobilinternet (GPRS) eléréséhez egy SIM900 GSM modult használtunk. Mivel ez a modul 5V feszültséget igényel, a Zybo külső áramforrására kapcsoltuk direktben. Mivel ilyen kapcsolás esetén a kezdeti áramfelvétel (az ún. initial peak) problémákat tud okozni, ezért erre a jövőben kiemelt figyelmet kell fordítani. Szerencsére az általunk alkalmazott tápegység jelen esetben elbírta a modult, de problémák léphetnek fel, ha egy jármű áramforrásáról próbáljuk az eszközt táplálni.
 
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=10in]{img/base_design_1}
+    \caption{Az RTTA részletes sémája.}
+    \label{detailedscheme}
+\end{sidewaysfigure}
+
 Képrögzítéshez szerettünk volna egy könnyen paraméterezhető eszközt használni, például egy webkamera helyett. Így esett a választásunk az OV7670-es modulra, könnyen beszerezhető, illetve maximális felbontása (640$\times$480 pixel) elegendő a számunkra. Előnye, hogy paraméterezhető a működése, így pontosan beállíthatjuk a mi igényeinknek megfelelően, illetve a rendszerbe illeszthetősége egyszerűbb. Ennek következménye, hogy a videostream előfeldolgozása nem veszi igénybe a processzort, így az kevésbé válik leterheltté. Jelenleg még nincs hardware szinten előfeldolgozás a rendszerben, de tervezzük egy HLS alapú OpenCV megoldás beépítését.
 
 Fontos kiemelnünk, hogy a jövőben egy CAN buszt is beépítünk a hardware design-ba, így ez az eszköz fog kommunikálni az autóval. Ennek jelentőségére a későbbi fejezetekben térünk ki.
@@ -541,14 +548,6 @@ GNU General Public License for more details.
 \noindent
 You should have received a copy of the GNU General Public License
 along with CSTS. If not, see <http://www.gnu.org/licenses/>.
-
-
-\begin{sidewaysfigure}
-    \centering
-    \includegraphics[width=10in]{img/base_design_1}
-    \caption{Az RTTA részletes sémája.}
-    \label{detailedscheme}
-\end{sidewaysfigure}
 
 \chapter*{Köszönetnyilvánítás}
 \addcontentsline{toc}{chapter}{Köszönetnyilvánítás}
