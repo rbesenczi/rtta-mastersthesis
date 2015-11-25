@@ -7,9 +7,7 @@ for (int i = 0; i < 10; i++){
         m_cop_gangster[i][j] = dists[j];
     }
 }
-
 int it = 10;
-
 //Sort the matrix
 while (it-- > 0){
     int MAX = 10000000;
@@ -26,11 +24,8 @@ while (it-- > 0){
             }
         }
     }
-    
-    gcop[i_cop] = w_gangsters[j_gang];
     //....//
 }
-
 //Routing
 for (int i = 0; i < 10; i++){
     Cop  c = w_cops[i];

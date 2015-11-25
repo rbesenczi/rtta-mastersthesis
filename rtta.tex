@@ -138,8 +138,10 @@ Debrecen
 
 2050-re a világ lakosságának 70\%-a várhatóan városokban fog élni \cite{unpopulation}. Ez a nagy mértékű urbanizáció új kihívások elé állítja a városi infrastruktúrát. Hogyan kezelhető egy ekkora méretű népesség? Milyen szolgáltatásokat nyújtson a városi adminisztráció annak érdekében, hogy élhető maradjon a város? Többek között ezekre a kérdésekre ad választ a Smart City kutatási terület, melynek megoldásai az utóbbi években kezdenek egyre inkább a mindennapok részévé válni. Kiemelten fontos problémakör lehet (és részben már most is az) a városi közlekedés. Egyre többen használják a városi infrastruktúrát, így a városi úthálózatot is. Milyen alkalmazást tud nyújtani a városi menedzsment, hogy a lakosok optimális módon tudjanak közlekedni? Erre a kérdésre adhat választ az okos közlekedés menedzsment (Smart traffic management).
 
+\vspace{2mm}
 A tömegérzékelés (crowd-sensing és crowd-sourcing) egy olyan eszközkészlet, mellyel bizonyos méréseket végezhetünk a lakosságra nézve, illetve a lakosság bevonásával. Ezek a mérések kiemelt szerepet játszanak az egyes döntési folyamatok során, valamint bemeneti adatként szolgálhatnak különféle szcenárióelemzésekhez, vagy akár konkrét szimulációkhoz is (ahogyan azt a dolgozat következő fejezeteiben is látni fogjuk). Egészen pontosan fogalmazva: a városi lakosságról ily módon szerezhetünk konkrét információkat, elemezhetjük szokásaikat egy számunkra érdekes kontextusban (például: hogyan közlekednek a városon belül). Habár a mérés az egyén szintjén történik, a lényeges információ nem ezen a szinten jelentkezik, így az elemzést egy aggregált, absztrakt szinten, a tömeg szintjén végezzük (individual level processing, crowd level analysis).
 
+\vspace{2mm}
 A korábbi években igen sok fejlődés tapasztalható az autó gyártásban, elsősorban az autonóm autók kapcsán. Egyre több autógyártó és techóriás fejleszt robotautót, mint például a területen úttörő Google (a fejlesztői prototípus a \ref{googleauto} képen látható) vagy a Volkswagen cégcsoport, de a Tesla elektromos autó gyártó termékei is egyre inkább önjáróak. Ezek a trendek folyamatosan gyorsulni látszanak. A 2000-es és 2010-es éveket főként az autókba épített, vezetőt segítő elektronikai eszközök uralták (úgymint a gyalogosfigyelő rendszerek, sávelhagyásra figyelmeztető rendszerek, stb.), a 2020-as éveket várhatóan az autonóm autók széles körű elterjedése fogja meghatározni. Ezek mellett a tisztán elektromos hajtású, valamint 2015-től a piacon is elérhető hidrogénhajtású autók is egyre szélesebb körben elérhetőek. Világosan látható, hogy az autóipar paradigmaváltás előtt áll. A vezetői élmény jelentősége és a fosszilis energiaforrásokon alapú hajtásláncok folyamatosan visszaszorulnak, helyettük a hosszú távon is fenntartható, környezetbarát, az utazást, mint pihentető, emberbarát eseményt vizionáló megoldások kerülnek a figyelem középpontjába.
 
 \begin{figure}[h]
@@ -151,8 +153,10 @@ A korábbi években igen sok fejlődés tapasztalható az autó gyártásban, el
 
 A két terület találkozási pontja egyértelmű: egy teljesen ésszerű elképzelés, hogy a már most is fejlett elektronikával szerelt autóknak a város adjon útvonalat. Ugyanis a városnak rendelkezésére állhat minden olyan információ, amellyel az utazás optimálissá, gazdaságosabbá, gyorsabbá tehető. Ilyen információk az útlezárások, felújítások, elterelések, vagy például ritka események, balesetek. 
 
+\vspace{2mm}
 Jelen dolgozat egy olyan tömegérzékeléses eszköz kiépítésének technikai és elméleti oldalát mutatja be, mellyel egy városi adminisztráció folyamatosan képes monitorozni a forgalmat. Az eszköz hardware illetve software komponensekből épül fel, és képes valós időben adatot gyűjteni a körülötte lévő forgalmi helyzetről, azt továbbítani egy szerveralkalmazás felé. A prototípussal egy próbamérést végeztünk, az adatokat elemeztük, aggregáltuk, majd egy forgalomszimulációra alkalmas rendszerben teszteltük, így megfigyelhetővé vált a forgalmi helyzet változása a kiinduló adatokhoz képest. Ennek az eszköznek a segítségével, valamint a későbbiekben leírt forgalomszimulációs rendszer segítségével képesek vagyunk pontosabb, a forgalmi helyzetet is figyelembe vevő útvonalat tervezni a forgalomban résztvevő egységeknek.
 
+\vspace{2mm}
 A dolgozat az alábbiak szerint épül fel: a következő fejezetben egy kitekintést adunk a Smart City kutatási-fejlesztési területre, majd röviden bemutatjuk a Robocar World Championship (vagy röviden OOCWC) rendszer felépítését és működését. A \ref{rttachapter}. fejezetben részletesen bemutatjuk a fejlesztett adatgyűjtő rendszert, a működésével szemben támasztott követelményeket és a tervezést (\ref{tervezes}. rész), a hardware (\ref{rttahw}. rész) és a software (\ref{rttasw}. rész) működését, valamint a felhasznált fejlesztőeszközöket (\ref{dev}. rész). A \ref{cstschapter}. fejezetben bemutatjuk a mért adatokon alapuló szimulációt. A \ref{results}. fejezetben bemutatjuk az eredményeinket, a \ref{futureworks}. fejezetben a jövőbeli munkákat, illetve a rendszer továbbfejlesztésének lehetőségeit tárgyaljuk.
 A \ref{summary}. fejezetben összegezzük a dolgozatot.
 
@@ -162,8 +166,10 @@ A \ref{summary}. fejezetben összegezzük a dolgozatot.
 
 A Okos Város kutatási, fejlesztési terület jelentős szerepet fog játszani az következő évtizedekben. Előrejelzések szerint 2023-ig több mint 170 milliárd dollár beruházás fog megvalósulni világszerte \cite{navigant}. A különböző informatikai megoldások egyre nagyobb számban vannak jelen a hétköznapokban már napjainkban is, mint például a VITAL \cite{vital}, a FI\-Ware \cite{fiware} vagy az iCity \cite{icity}. Ezen felül egyre több kezdeményezés tesz kísérletet arra, hogy a városi lakosság hétköznapjait okosabbá és biztonságosabbá tegye (\cite{smartsantander}, \cite{futureglasgow}, \cite{myneighbourhood}). Emellett sok tanulmány foglalkozik a smart city fogalomkörével, illetve hogyan mérhető egy város ``okossága'' (\cite{yamauchi2014development}, \cite{neirotti2014current}, \cite{de2014smart}, \cite{carli2013measuring}). A \cite{giffinger2007smart} tanulmány egy sorrendet is felállított az európai városokról ``okosság'' tekintetében. A vészhelyzetek kezelése is kiemelt szerepet kap (például \cite{du2012research}). A témánkhoz kapcsolódóan megemlíthető, hogy a \cite{mohan2008nericell} szerzői egy mobiltelefon alapú, automatikus forgalommérő rendszert fejlesztettek.
 
+\vspace{2mm}
 Látható, hogy a Smart City kutatási, fejlesztési terület lassan iparággá növi ki magát, mindenképpen komoly jövő előtt áll.
 
+\vspace{2mm}
 Az adatgyűjtés fontos alapokat szolgáltat az okos város alkalmazásoknak. Legyen szó egy döntési folyamatról vagy csupán egyszerű monitorozásról, az adatgyűjtő rendszerek jelentős részét képezik bármely okos szolgáltatásnak. Az adatgyűjtés módja szerint két fő kategóriát különíthetünk el.
 
 \begin{itemize}
@@ -173,11 +179,12 @@ Az adatgyűjtés fontos alapokat szolgáltat az okos város alkalmazásoknak. Le
 
 Tehát a két módszer a felhasználó részvétele alapján különíthető el. A crowd-sourcing esetében a felhasználó megfigyel valamilyen eseményt, és valamilyen eszköz használatával küld adatot (participatory sensing). Ilyen adatgyűjtő rendszerek találhatóak a \cite{szabo2013framework} közleményben, illetve egy rendszer implementációjának részletes leírása a \cite{besenczi2013kozossegi} szakdolgozatban. Ezzel szemben a crowd-sensing nem igényel emberi beavatkozást, a rendszer autonóm módon működik.
 
+\vspace{2mm}
 A rendszer által gyűjtött adatok a Robocar World Championship (vagy röviden OOCWC) rendszer bemeneteként szolgáltak. A OOCWC rendszer célja, hogy az autonóm autók és az okos városok közötti összefüggéseket vizsgálja, kutatási valamint oktatási platform. A rendszer felépítését az \ref{basedesign} ábra szemlélteti.
 
 \begin{figure}[h]
 \centerline{
-\includegraphics[width=3.4in]{img/tetris_plan}}
+\includegraphics[width=3.2in]{img/tetris_plan}}
 \caption{Az OOCWC rendszer tetris terve. Forrás: \cite{oocwcrepo}.}
 \label{basedesign}
 \end{figure}
@@ -197,12 +204,16 @@ Ez alapján a rendszer egyes elemei:
 
 A rendszer többcélú. Egyrészt egy kutatási platformot kínál forgalomelemzésre, szimulációkra. A szimuláció az OpenStreetMap \cite{osm} térképein fut, típusát tekintve a Nagel-Schreckenberg modell \cite{nasch} egy változatának tekinthető, egy cella-alapú megoldás. A rendszer egyik alapkövetelménye, hogy nagyszámú forgalmi egység is reprezentálható legyen. Hasonló esetet mutat be a \cite{singapore} tanulmány, ahol $10^6$ darab járművet szimuláltak. Fontos megjegyezni, hogy ebben a tanulmányban leírt szimuláció nem realisztikus, mivel az egyes egységek nem önálló ágensek. Realisztikus szimulációra is találhatunk példát, \cite{realsim}.
 
+\vspace{2mm}
 A rendszer másik célja, hogy egy verseny segítségével találjuk meg a lehető legjobb forgalomirányító algoritmust. A rendszer készítői már több sikeres versenyt is lebonyolítottak a Debreceni Egyetem Informatikai Karán \cite{competitions}. Nem ritka, hogy egy-egy kutatási platform versenyezteti a felhasználókat. Erre talán az egyik legjobb példa a mesterséges intelligencia területén a RoboCup \cite{robocup}. 
 
+\vspace{2mm}
 A rendszer kutatói-fejlesztői folyamata az agilis metodikát követi, gyors prototípusfejlesztéssel az egyes komponensekre. Jelenleg az emulátort tekintve két implementáció létezik, egyrészt a ``Justine'' \cite{oocwcrepo}, másrészt a ``Justina'' \cite{justinarepo}. Mindkét megvalósítás nyílt forráskódú. A rendszerről további információk olvashatóak a \cite{7231223}, valamint \cite{infocomjournal} közleményekben, a ``Justina'' részletes implementációja pedig a \cite{mamenyak2015robotauto} szakdolgozatban.
 
+\vspace{2mm}
 Kiemelendő, hogy a rendszer magas fokú alkalmazkodó képességgel rendelkezik. Más és más jellegű útvonaltervezés szükséges kormányzati közlekedéshez, vészhelyzetek esetében, stb. Az oktatási és kutatási oldal támogatására került kifejlesztésre a ``Police Edition'' (egy-egy pillanatkép ebből a változatból a \ref{police} ábrán látható). A cél, hogy rendőr ágensekkel, melyeket a kutató által implementált irányító algoritmus vezérel, minél több gengszter ágenst kapjunk el. Egy ilyen implementációra láthatunk példát a \cite{forkcoginfocom} absztraktban.
 
+\vspace{2mm}
 Az OOCWC rendszerben a szimulációt a gyűjtött adatok alapján inicializáljuk. A rendszer jelenleg háromféle forgalmi egységet különböztet meg, routine cars, smart cars és guided cars. A szimuláció kezdőállapota a routine cars és smart cars elhelyezése a térképen a gyűjtött adatok alapján. (Lásd később részletesen.)
 
 \begin{figure}[h]
@@ -213,21 +224,26 @@ Az OOCWC rendszerben a szimulációt a gyűjtött adatok alapján inicializálju
 \caption{Pillanatkép a rendszer ``Police Edition'' változatából. A térkép az OSM egy részlete, Manhattan, New York City, USA. A megjelenítést a JXMapViewer2 \cite{jxmapv} biztosítja. A térképen a routine car rózsaszínnel, a gengszter ágensek pirossal (smart car), a rendőrágensek (guided car) kékkel jelölve. Forrás: \cite{infocomjournal} \label{police}}
 \end{figure}
 
+\newpage
 \section{Ismerkedés az OOCWC rendszerrel}
 
 Céljaink elérése érdekében jobban meg szerettük volna ismerni az OOCWC rendszert. Remek lehetőséget adott a Debreceni Egyetem Informatikai Karán már többször megrendezett Robotautó Világbajnokság, melynek keretében a rendszer ``Police Edition'' változatából készíthetnek egy saját fork-ot a hallgatók és az érdeklődő kutatók. A játék célja, hogy a rendőr ágensekkel minél több gengszter ágenst kapjunk el. Mi is elkészítettük a saját változatunkat, melynek működéséről egy rövid összegzést adunk. (Lásd még \cite{forkcoginfocom}).
 
+\vspace{2mm}
 A szimuláció kezdetekor 100 gengszter ágens és 10 rendőr ágens kerül inicializálásra, a térképre véletlenszerűen, egyenletes eloszlást követve kerülnek fel. A szimuláció 10 percig tart. Mivel a rendszer multi-ágens alapú, minden egyes rendőrágenst ugyanaz az algoritmus vezérel és ugyanazok a heurisztikák érvényesek, például a legközelebbi gengsztert üldözzük. A mi algoritmusunk lényege, hogy egy gengsztert csak egy rendőr üldözhet. Ez a megközelítés az egyenletes eloszlás miatt lényeges. Célunk volt olyan rendőr-gengszter párok felállítása, melyek a szimuláció adott állapotában távolságminimalizáltak.
 
+\vspace{2mm}
 Az első megközelítésben a Harvestine-távolságot használtuk, amely az OOCWC alapkiadásában is megtalálható. Ezt a módszert elvetettük, mivel nem hozott kielégítő eredményeket.
 
+\vspace{2mm}
 A második próbálkozásunkkor utakon számolt távolságot mértünk (tehát a valós, nem légvonalban mért távolságot), ahol természetesen figyelembe vettük az egyirányú utakra vonatkozó megszorításokat is. A rendszer külön kezeli az utcák különböző irányait. Az utak csomópontjai a gráf csúcsainak, az egyes irányok pedig a csúcsok közötti éleknek felelnek meg. Ha tehát egy utca kétirányú, akkor a gráf két csúcsából mindkét irányba indul egy-egy irányított él a másik csúcsba. 
 
+\vspace{2mm}
 Az OOCWC rendszer alapkiadása csak egy rendőr-gengszter párt tud kezelni. A mi megoldásunk $N$ pár kezelésére képes, amely egy $N{\times}M$ mátrixot készít, egy-egy távolságértéket minden egyes rendőr és gengszter között. (Itt jegyezzük meg, hogy ezek a távolságok nem szimmetrikusak az egyirányú utak miatt.) Ebben a mátrixban keressük a legkisebb értéket (jelöljük $M_1$, $N_1$), így az $M_1$ rendőr az $N_1$ gengsztert fogja üldözni. Az iteráció a rendőrágensek számáig fut.
 
+\vspace{2mm}
 Az algoritmus hatékonyságát tekintve megjegyezhetjük, hogy egy Apple MacBook Air 11" (Model A1465) laptopon (Intel Core i5 1,4 GHz, 2 processzor mag 4 szálon, 4 GB memória) a mátrix kiszámolása (tehát 100$\times$10 útvonal) Debrecen térképén átlagosan 200 ms-ot vett igénybe. Ez azt jelenti, hogy egy útvonal kiszámolása átlagosan 200 \si{\micro}s időt vett igénybe. (Természetesen itt a térkép tulajdonságai is fontosak, hiszen több csúccsal és több éllel rendelkező gráfban ez lassabb lehet, valamint a feldolgozás kötegelt.) Az \ref{rsmcode}. forráskódrészlet az algoritmust prezentálja.
 
-\newpage
 \lstinputlisting[language=C++, caption=A ``Police Edition'' változathoz készített algoritmus, label=rsmcode]{src/rsmcode.cpp}
 
 \chapter{Real-time Traffic Analyzer}
@@ -235,13 +251,16 @@ Az algoritmus hatékonyságát tekintve megjegyezhetjük, hogy egy Apple MacBook
 
 Az adatgyűjtő rendszer hardware és software komponensekből épül fel. A rendszer a Real-time Traffic Analyzer (RTTA) nevet viseli, nyílt forráskódú (GNU GPL v3) és elérhető a projekt tárolójából \cite{rtta}. Megjegyezzük, hogy ez csupán maga az adatgyűjtő rendszer. A kimeneti adatokat aggregáció után az OOCWC rendszerben teszteltük. Ehhez szükséges volt annak módosítása, hogy fogadni tudja az adatainkat, így egy fork implementációt készítettünk. Az adatgyűjtő rendszerrel együtt ez a projekt Crowd-sourced Traffic Simulator (CSTS) néven elérhető a GitHubon \cite{csts}. 
 
+\vspace{2mm}
 Ebben a fejezetben részletesen leírjuk a tervezés lépéseit, milyen szempontok szerint képzeltük a rendszer működését. Ezután részletesen kitérünk az egyes alkotóelemekre, majd a következő fejezetben a CSTS működésére. Ezt követően leírjuk az implementáció során használt fejlesztőeszközöket, majd a tesztelési fázis leírása következik.
 
+\newpage
 \section{Tervezés}
 \label{tervezes}
 
 A Robocar City Emulator (RCE) bemeneteként szolgáló adatokat a Robocar City Cloud fogja tárolni. (Jelenleg még nincs ilyen felhőimplementációnk.) Ez az adatbázis fogja tárolni annak a városnak az adatait, ahol az RCE működik. Ahogyan azt már korábban említettük, kétféle adatgyűjtő rendszer-megközelítés létezik. Egyrészt egy közösségi adatgyűjtés, ahol az adatgyűjtők aktív részvétele szükséges egy-egy folyamat megfigyeléséhez és annotálásához. Az OOCWC rendszer sémájában ez a Human controlled Sensor Annotations (HSA) modulnak felel meg. Itt elsősorban olyan mobiltelefonos alkalmazást fogunk kifejleszteni, amely egyszerű grafikus felülettel rendelkezik. Egy használati mód, hogy a megfigyelő egy útszakaszon elhaladó járműveket a mobiltelefon egy softkey-ének a lenyomásával annotálja. A rendszer fejlesztésének jelenlegi fázisában ez a típusú adatgyűjtés még nem implementált.
 
+\vspace{2mm}
 A másik adatgyűjtő mód az automatikus adatgyűjtés vagy crowd-sensing. Ez a rendszer sémájában a Automatic Sensor Annotations (ASA) modulnak felel meg. Az általunk fejlesztett hardware eszközök felhasználói beavatkozás nélkül képesek adatgyűjtésre. A tervezés első lépéseként meghatároztuk a rendszerrel szemben támasztott alapvető követelményeket. Az alábbiakban összegezhetjük:
 
 \begin{itemize}
@@ -253,14 +272,19 @@ A másik adatgyűjtő mód az automatikus adatgyűjtés vagy crowd-sensing. Ez a
 
 A fejlesztést három irányban képzeltük el. A fő különbséget a hardware-ben található processzor (vagy annak hiánya) jelenti. Ami az egyes megoldásokban közös, hogy mindegyikben megtalálható egy FPGA (Field Programmable Gate Array), valamint az egyes perifériák. Bementként egy képszenzort és a GPS vételére alkalmas modult használtunk, kimenetként egy szabványos GSM modult alkalmaztunk. A fejlesztést egy ún. development boardon végeztük el. Az egyes hardware designokat az alábbiakban részletezzük.
 
+\vspace{2mm}
 {\bf{ARM alapú megoldás.}} Ennél a típusnál az FPGA gyorsaságát az I/O rendszer, valamint a memória kezelésére használjuk fel. Az ARM processzor egy szabványos opciót kínál számunkra számításokhoz, képfeldolgozó algoritmusok futtatásához. A rendszer fő előnye, hogy könnyedén használhatunk egy Beágyazott Linux Rendszert (Embedded Linux System -- ELS), tehát a magas szintű feldolgozási folyamatokat egy szabványos Linux/UNIX környezetben implementálhatjuk. Ilyen ARM alapú, beágyazott rendszerrel szállított eszköz például a Raspberry Pi single-board számítogép (igaz, ebben FPGA nincs, csak ARM processzor).
 
+\vspace{2mm}
 {\bf{Soft-processor alapú megoldás.}} Ennél a típusnál nincs fizikailag jelen a processzor, nekünk kell a hardware designhoz hozzáadnunk egy előre definiáltat. (Például a Xilinx Micro-Blaze processzort.) Ebben az esetben mi definiáljuk a processzor pontos működését, de az utasításkészlete limitáló tényező. ELS alkalmazására -- hasonlóan az ARM alapú megoldáshoz -- itt is van lehetőségünk.
 
+\vspace{2mm}
 {\bf{Nyers FPGA design.}} Ebben az esetben semmilyen processzor nem áll a rendelkezésünkre, csupán az FPGA. Az I/O kezeléstől kezdve a képfeldolgozó algoritmusok futtatásán át a memóriakezelésig minden az FPGA-ban implementált, gyakorlatilag egy tisztán hardware megoldás. Belátható, hogy számítási kapacitás terén ez a leggyorsabb, ugyanakkor a fejlesztői folyamata is ennek a leghosszabb.
 
+\vspace{2mm}
 Összegezve a fentieket elmondhatjuk, hogy az ARM alapú megoldások rugalmasabbak, valamint könnyedén bővíthetőek új funkciókkal, de limitálva vagyunk az ARM képességeire (akár az órajelet, akár az utasításkészletet tekintjük).  Ezzel szemben, mivel könnyen és olcsón elérhetőek ilyen fejlesztői kártyák, valamint a fejlesztési folyamat rövidebb és egyszerűbb, hamarabb építhető ki egy fejlesztői közösség a rendszer körül. A tisztán FPGA alapú designok sokkal gyorsabb feldolgozást tesznek lehetővé, viszont a fejlesztési folyamatuk hosszasabb és komplikáltabb. Jelenleg implementációban az ARM alapú megoldás érhető el, melynek működését ebben a fejezetben részletesen kifejtjük.
 
+\newpage
 \section{Technológiai áttekintés}
 
 Az adatgyűjtő rendszert első körben egy ARM alapú hardware-eszközre fejlesztettük ki. A projekt megvalósításához szükségünk volt egy olyan eszközre, amely sokkal rugalmasabb fejlesztést tesz lehetővé. Ezért például a Raspberry Pi single-board számítógép a szűkös erőforrásai, valamint limitált periferizálhatósága miatt nem volt alkalmas a számunkra. (Megjegyezzük, hogy ez csak az eszköz első generációjára érvényes, a második generációs Raspberry Pi 2 már elfogadható lenne, de az csak a fejlesztés után kerül piacra.) Mivel az ARM egy igen elterjedt architektúra, ezért könnyen elérhetőek fordítóprogramok, illetve egy Beágyazott Linux Rendszer használata is egyszerű. A fent említettek miatt a választásunk egy Zynq System-on-chip (SoC) rendszerre esett.
@@ -281,12 +305,16 @@ A rendszer sémája a \ref{rttaschema} ábrán, a részletes felépítése pedig
 
 A fejlesztést a Digilent Zybo development boardján végeztük \cite{zybo}. Ahogyan az a sematikus ábrán is látható, a rendszer központi eleme a Zynq Processing System, kiegészülve a Processor System Resettel. Az egyes eszközöket az Advanced Extensible Interface (röviden AXI, \cite{xilinx1999reference}) busz protokollon keresztül kapcsoltuk egymáshoz. Ez a protokoll egy szabványosított megoldást biztosít az egyes komponensek egymáshoz kapcsolására. A két fő komponens a két UartLite soros port. A GPS modullal az \emph{axi\_uartlite\_0} soros porton kommunikálhatunk, mely 4800 bauddal küldi a GPS 1 PPS adatait. (A GPS 1 másodpercenként küldi a kódméréshez szükséges adatcsomagokat.) A GSM modullal az \emph{axi\_uartlite\_1} soros porton kommunikálhatunk 115200 bauddal. Az \emph{ov7670\_top\_0} modul kiolvassa a kamerából a videóadatokat, majd AXI kompatibilis streammé alakítja. Az \emph{axi\_vdma\_0} betölti a memóriába a kamerából érkező adatokat az \emph{axi\_interconnect\_0} modulon keresztül.
 
+\vspace{2mm}
 A kommunikáció az egyes perifériák között az AXI buszon történik. Ennek a busznak 100 MHz-es alapórajele van, a kamera adatok továbbításáért 150 MHz-es másodlagos órajelet alkalmazunk.
 
+\vspace{2mm}
 Video Direct Memory Access-t (VDMA) alkalmazunk, amely a memória és a kameramodul között közvetlen, nagy sebességű elérést biztosít. Ezzel töltjük be a memóriába a videostreamet. A videó felbontása 640$\times$480 pixel. A VDMA könnyedén használható, és köszönhetően a Linux illesztőprogramnak, könnyedén beintegrálhattuk a rendszerbe.
 
+\vspace{2mm}
 A céljaiknak a Vincotech A1080-A GPS vevő modulja alkalmasnak tűnik. Minimális külső komponenseket igényel és egyszerűen soros porton kommunikál. A modul 1 PPS időközönként küld adatot. Ezeket az adatokat a Linux rendszeren futó alkalmazásunk dolgozza fel (lásd a következő fejezetet). A pontos idő és a pozíció fontos a számunkra. A Peripheral Module (PMOD) által leadott áram elegendő ennek a modulnak.
 
+\vspace{2mm}
 A mobilinternet (GPRS) eléréséhez egy SIM900 GSM modult használtunk. Mivel ez a modul 5V feszültséget igényel, a Zybo külső áramforrására kapcsoltuk direktben. Mivel ilyen kapcsolás esetén a kezdeti áramfelvétel (az ún. initial peak) problémákat tud okozni, ezért erre a jövőben kiemelt figyelmet kell fordítani. Szerencsére az általunk alkalmazott tápegység jelen esetben elbírta a modult, de problémák léphetnek fel, ha egy jármű áramforrásáról próbáljuk az eszközt táplálni.
 
 \begin{sidewaysfigure}
@@ -298,8 +326,10 @@ A mobilinternet (GPRS) eléréséhez egy SIM900 GSM modult használtunk. Mivel e
 
 Képrögzítéshez szerettünk volna egy könnyen paraméterezhető eszközt használni, például egy webkamera helyett. Így esett a választásunk az OV7670-es modulra, könnyen beszerezhető, illetve maximális felbontása (640$\times$480 pixel) elegendő a számunkra. Előnye, hogy paraméterezhető a működése, így pontosan beállíthatjuk a mi igényeinknek megfelelően, illetve a rendszerbe illeszthetősége egyszerűbb. Ennek következménye, hogy a videostream előfeldolgozása nem veszi igénybe a processzort, így az kevésbé válik leterheltté. Jelenleg még nincs hardware szinten előfeldolgozás a rendszerben, de tervezzük egy HLS alapú OpenCV megoldás beépítését.
 
+\vspace{2mm}
 Fontos kiemelnünk, hogy a jövőben egy CAN buszt is beépítünk a hardware design-ba, így ez az eszköz fog kommunikálni az autóval. Ennek jelentőségére a későbbi fejezetekben térünk ki.
 
+\vspace{2mm}
 A rendszer jelenlegi állapota a \ref{currentsys} képen látható.
 
 \begin{figure}[h]
@@ -316,6 +346,7 @@ Itt jegyezzük meg, hogy a rendszer még nem építhető be civil használatra j
 
 Ahogyan azt korábban említettük, az ARM alapú fejlesztői kártyán lehetőségünk van Linux rendszert futtatni. Mi a Linaro mellett döntöttünk, amely egy nyílt forráskódú, Ubuntu Linux alapú, kifejezetten ARM SoC rendszerekre optimalizált operációs rendszer. 
 
+\newpage
 Az ezen futó software három részből épül fel.
 
 \begin{itemize}
@@ -334,6 +365,7 @@ A GPS modul egyszerűen kiolvassa az eszközről érkező, számunkra lényeges 
 
 Kommunikációs protokollnak az MQTT-t választottuk. Az MQTT egy kifejezetten a \emph{machine-to-machine} típusú kommunikációra kifejlesztett, alacsony overhead-del bíró protokoll. Alapjaiban egy publish/subscribe paradigmát követő megoldás. Kifejezetten jó alacsony fogyasztású eszközök, illetve kis kommunikációs sávszélesség esetén \cite{mqtt}. 
 
+\vspace{2mm}
 A képfeldolgozó algoritmus egy Haar-cascade osztályozáson alapuló objektumfelismerés \cite{violacascade} \cite{haaremp}. Az osztályozás alapjául szolgáló betanított cascade file forrása: \cite{cascade}. A videóstream inicializálása után, minden egyes képet egy Mat típusú objektumban tárolunk, majd a \ref{detectimage} kódrészlettel objektumokat keresünk. 
 
 \lstinputlisting[language=C++, caption=Objektumdetektálás OpenCV-ben, label=detectimage]{src/detectimg.cpp}
@@ -344,17 +376,22 @@ Látható, hogy az eszköz nem a nyers képi adatot küldi a szerverünknek, han
 
 Ez a fajta előfeldolgozás több szempontból is hasznos. Más rendszereknél gyakran előforduló metodika, hogy a videóállományt egy az egyben továbbítják egy központi feldolgozó felé. Ebben a felállásban az átvitt adat mennyisége jelentős, függ a videó felbontásától, annak kódolásától, tömörítésétől, stb. Emellett több eszköz esetén, minden eszközről érkező adat egy központi rendszerben kerül kiértékelésre, feldolgozásra, amely jelentős terhelést jelent. A mi megoldásunk ezzel szemben áll. A kiértékelést lokálisan, az adatgyűjtő eszközön végezzük, így az a központi feldolgozó rendszernek nem jelent többletterhelést. Emellett az adatátviteli csatornát sem terheljük a videóállomány nagy méretével, hanem csak percenként pár kB-nyi adat kerül elküldésre.
 
+\vspace{2mm}
 A rendszerhez a tesztelhetőség érdekében készítettünk egy asztali PC-n futtatható alkalmazást. A program egy MQTT bróker alkalmazás, amihez az egyes adatgyűjtő eszközök kapcsolódnak, ide küldik az általuk gyűjtött adatokat. A program bemenete tehát az eszközökről érkező adatok, kimenete pedig egy egyszerű szöveges file, amely az OOCWC rendszer bemeneteként szolgál. Erről részletesebben a következő fejezetben beszélünk.
 
+\vspace{2mm}
 Itt jegyezzük meg, hogy a rendszer jelen működési paramétereivel nem teremt személyiségi jogi aggályokat. Az informatikai rendszereknél, ahol a civil környezet monitorozása a feladat, a személyiségi jogok védelme kiemelt fontosságú. Jelen rendszer működése során nem továbbít, nem rögzít személyiségi jogi szempontból érzékeny vagy kiemelten érzékeny adatot, a gyűjtött adatokból a rendszer segítségével személyiségi jogokat sértő tényállás nem teremthető. (Más rendszereknél példaként említhető, hogy a Google StreetView rendszer is a felismerhetőség ellehetetlenítésével védi a személyiségi jogokat, például az arcok, rendszámtáblák kitakarásával.) A RTTA és a CSTS rendszereknél a működési elvük implikálja, hogy jogi aggályok nem vetődhetnek fel (a videóállomány feldolgozása csak a jármű, mint objektum felismerésére terjed ki, sem a rendszámtábla, sem a jármű egyéb tulajdonsága nem kerül feljegyzésre vagy továbbításra.)
 
+\newpage
 \section{Fejlesztőeszközök}
 \label{dev}
 
 Amint az látható, a rendszer heterogén a felépítését tekintve, ezért több fejlesztőeszköz is szükséges. A hardware design fejlesztését a Xilinx Vivado Design Suite 2014.4-es verziójával végeztük. Az általunk korábban használt fejlesztői eszközhöz képest (Xilinx ISE Design Suite) sok változáshoz kellett alkalmazkodnunk. Míg az ISE alacsony szintű tervezést és implementációt követel meg -- tehát a konkrét Verilog vagy VHDL modul programozását -- addig a Vivado más szempontú fejlesztést tesz lehetővé (természetesen emellett megmaradt a modul programozásának lehetősége is). Ebben a fejlesztői környezetben az egyes kész modulok rendszerbe illesztését egy egyszerűbb, átláthatóbb grafikus felületen tudjuk elvégezni. A mi implementációnk is hasonlóan készült. Első lépésként definiálnunk kell, hogy egy ELS rendszert szeretnénk Zybo development boardon készíteni, majd az egyes perifériákat kell felfűzni a rendszerhez. Fontos megjegyeznünk, hogy nem minden esetben áll rendelkezésünkre előre leírt modul, nekünk a GPS modul működését kellett alacsony szinten definiálnunk.
 
+\vspace{2mm}
 Az eszközön futó operációs rendszer egyszerűen beépíthető volt a rendszerünkbe, csupán pár apró módosítást kellett elvégeznünk. Ilyen típusú rendszereknél a Linux kernelhez szükséges hozzáadnunk egy általunk definiált ún. device tree-t. Ez a device tree határozza meg, hogy a beágyazott rendszert futtató hardware eszközön az egyes kivezetések (I/O portok) hol helyezkednek el, hol érhetőek el. Ha ezt sikeresen elkészítettük, a Linuxon belülről minden perifériát az ilyen rendszereknél szokott módon, file-ként tudunk kezelni. Számunkra konkrétan ez azt jelenti, hogy például a GPS modultól érkező adatok egy egyszerű file-ból olvasással, a GSM modul felé küldött adatokat pedig egy egyszerű file-ba írással tudjuk elvégezni. Ilyenre láthatunk példát a \ref{fileops} forráskód részletben. Az első blokk megnyitja olvasásra a GPS modulhoz rendelt file-t, a második pedig elkezdi olvasni. A harmadik blokkban a kameramodulhoz tartozó file-t nyitjuk meg.
 
+\newpage
 \lstinputlisting[language=C++, caption=File műveletek a software-ben, label=fileops]{src/fileoperations.cpp}
 
 A Linux rendszeren futó software-ünket hagyományos Linux/UNIX környezetben tudtuk fejleszteni. Ehhez a KDevelop fejlesztői IDE-t használtuk, szabványos C++11 programnyelven, POSIX szálak segítségével. A képfeldolgozó algoritmust először ki szerettük volna próbálni PC-s környezetben. Ennek oka, hogy jelenleg a RTTA eszközön a megjelenítés nincs implementálva, tulajdonképpen a működést nem tudjuk vizuálisan validálni. A PC-s program ugyanazt az objektumfelismerő algoritmust használja Haar-cascade alapú osztályozás segítségével. A program futását a \ref{rttapc} képen láthatjuk. Bal oldalon látható a videófelvétel (amely egy Apple iPhone 5S-sel készült), itt tájékoztató jellegű adatokat is feltüntettünk, úgymint aktuális pozíció, pontos idő, a felvétel időbélyege, valamint az adott utcán számolt járművek száma. A könnyebb értelmezhetőség érdekében készítettünk egy modult, mellyel térképen tudjuk szemléltetni a bejárt útvonal terheltségét. Ez látható a jobb oldali képen. A \ref{carredrect} képen látható, hogy az algoritmus sikeresen felismeri a járművet a felvételen.
@@ -368,6 +405,7 @@ A Linux rendszeren futó software-ünket hagyományos Linux/UNIX környezetben t
 
 A rendszerhez tartozik egy szerver alkalmazás is, ezt a JAVA 8-as verziójában NetBeans fejlesztői környezetben készítettük. Ez a program fogadja az adatgyűjtő eszköztől érkező adatokat, majd aggregálja azokat. Ennek módszere, hogy a GPS koordináták alapján az osmium fejlesztői könyvtár segítségével minden egyes mért adatot egy utcához rendel, majd a méréseket összegezi. Ez a program állítja elő számunkra azt a file-t, amely a Robocar City Emulator bemeneteként fog szolgálni (részletesen lásd a következő fejezetben). 
 
+\vspace{2mm}
 A rendszer felépítéséhez, telepítéséhez nyújt segítséget a projekt hivatalos repozitorijában \cite{rtta} található step-by-step leírás.
 
 \begin{figure}[h]
@@ -382,14 +420,17 @@ A rendszer felépítéséhez, telepítéséhez nyújt segítséget a projekt hiv
 
 Az RTTA által gyűjtött adatokat az OOCWC rendszer Robocar City Emulator moduljának adtuk meg bemenetként. Ehhez a OOCWC platformból készítettünk egy fork implementációt, majd a mi céljainkra módosítottuk azt. A projektet Crowd-sourced Traffic Simulatornak neveztük el, elérhető a GitHubon \cite{csts}.
 
+\vspace{2mm}
 A Robocar City Emulator bemenete egy szöveges file, mely soronként két információt tartalmaz: az utca nevét és a hozzá tartozó gyakoriságértéket. (Tehát az adott utcán számolt járművek mennyiségét.) A következőkben jelöljük az utcát $s_i$-vel, ($i=1, \dots, N$), a hozzá tartozó gyakoriságértéket pedig $v_i$-vel. Ez a gyakoriság a mérés adott pontjára vagy pontjaira értelmezett az adott utcán. A későbbiekben ez a gyakoriság a pontban mért mérések átlaga lesz. A ``Justine'' szimulátor egy OSM alapú gráfon működik, ahol az egyes csomópontok OSM útpontok. Jelölje $n_i$ a OSM útpont számosságát az $s_i$ utcán és $s_i^j$ a j-edik OSM csomópontot az $s_i$ utcán ($i=1, \dots, N$, $j=1, \dots, n_i$). Ekkor a szimulációban a járművet az $s_i^j$ csomópontra az alábbi valószínűség szerint inicializáljuk: 
 
 \[P(s_i^j)=\frac{v_i}{\sum_{k=1}^{N}{n_kv_k}}.\]
 
 Könnyen belátható, hogy $\sum_{i=1}^{N}\sum_{j=1}^{n_i}P(s_i^j) = 1$.
 
+\vspace{2mm}
 Tehát a járműveket a szimuláció kezdőállapotában a mért adatok alapján inicializáljuk. Innen indíthatjuk a szimulációt és megfigyelhetjük a szimulációs algoritmus működését.
 
+\vspace{2mm}
 Az alap OOCWC rendszert szükséges volt egy új osztállyal bővítenünk. Ebben az osztályban reprezentáljuk a valós adatokon alapuló forgalmat. Az új osztály az alap Traffic osztály kiterjesztése (az ősosztály működését lásd az OOCWC projekt dokumentációjában \cite{oocwcrepo}), új tagjai többek között a mért eloszlás adatai, valamint a fent leírt inicializáló módszer alapján egy függvény. Az osztályból a \ref{trafobj}. forráskódrészletben látható módon készítünk egy példányt, amennyiben a célunk a valós adatokon alapuló szimuláció futtatása. Látható, hogy az osztály konstruktorában az \emph{itype} változóval jelezzük, hogy valós adatok alapján kívánjuk elhelyezni a forgalomban részt vevő járműveket a térképen.
 
 \lstinputlisting[language=C++, caption=A RealTraffic objektum példányosítása, label=trafobj]{src/trafficobj.cpp}
@@ -414,16 +455,22 @@ A mért adatok alapján inicializált szimuláció kezdőállapotát a \ref{simu
 
 Látható, hogy az OOCWC rendszer fontos építőeleme az adatgyűjtő rendszer. Ahhoz, hogy valós eseményeket szimuláljunk (például útvonaltervezés, valós forgalomszimulációk) a valós világból vett adatokra van szükségünk. Ezt a célt szem előtt tartva, kifejlesztettünk egy tömegérzékelés elven működő rendszert. Az eszköz ARM alapú hardware és software együttese, amely a közeljövőben alkalmas lesz arra, hogy beépítsük forgalomban részt vevő járművekbe. Megjegyezzük, hogy egy kezdetleges tesztelést már végeztünk. Ebben a kísérletben Debrecen néhány utcáját vizsgáltuk és az így kapott adatokat a Robocar City Emulator bemeneteként használtuk. Az adatgyűjtő rendszer neve Real-time Traffic Analyzer, az erre, valamint az OOCWC rendszerre épülő projekt neve Crowd-sourced Traffic Simulator.
 
+\vspace{2mm}
 A kifejlesztett adatgyűjtő eszköz, amelyet folyamatosan mozgó járművekbe fogunk telepíteni képes forgalmat mérni, konkrétan a környezetében kialakult forgalmi helyzetet. Fontos megjegyezni, hogy a rendszer újszerűségét az adja, hogy az eszköz folyamatosan mozgásban van. Több, hasonló célra fejlesztett adatgyűjtő rendszer üzemel, de azok mind fix telepítésűek. Emiatt minden egyes speciális tényezőt figyelembe kellett vennünk a tervezés során. Az eszköz központi eleme egy fejlesztői kártya, amely jelenleg egy Digilent Zybo. Ez a kártya egy FPGA-t és egy ARM processzor tartalmaz, melyek egymást kiegészítve működnek. Az FPGA végzi az I/O rendszer kezelését, az ARM processzor pedig a képfeldolgozást. Mivel az eszköz folyamatosan mozgásban van, szükséges volt egy GPS modul is, így meghatározhatjuk az eszköz pontos helyét, valamint az egyes gyakoriságértékeket utcákhoz rendelhetjük. Maga a képfeldolgozás egy Haar-cascade alapú osztályozás, és egy erre épülő objektumfelismerés. A videostream-et egy kameramodultól kapjuk 640$\times$480 pixel felbontásban. Az adatokat előfeldolgozás után mobilinterneten küldjük a szerveralkalmazásunknak egy szabványos GSM modul segítségével.
 
+\vspace{2mm}
 A Zybo fejlesztői kártya jelenleg elegendő, de ha bővíteni szeretnénk új funkciókkal, könnyen lehet, hogy kevésnek bizonyul. Problémát okozhat, ha szeretnénk bizonyos képi előfeldolgozást végezni a SoC FPGA részében. A perifériák jól működnek, de valószínűleg a kommunikációs interface-t egy USB-s mobilstickkel fogjuk helyettesíteni.
 
+\vspace{2mm}
 A mérés egy autószámláló eljárás, amely minden egyes útszakaszon egy sűrűségértéket ad. Minél több járművet számolunk adott útszakaszon, annál sűrűbb ott a forgalom. A szerveroldalon egy algoritmus összegyűjti ezeket a sűrűségadatokat, majd aggregáció után utcákhoz rendeli. Így a program egy file-t állít elő, melyben minden sor két értéket tartalmaz: az utca nevét és az utcához tartozó gyakoriságot.
 
+\vspace{2mm}
 A szimuláció során ezt a gyakoriságértéket használjuk. A Robocar City Emulator bementén megadjuk ezt az egyszerű szöveges állományt, amely ez alapján inicializálja a szimuláció kezdőállapotát. Ezután a szimulációt elindítjuk, majd megfigyeljük hogyan változik a járművek eloszlása. Az OOCWC rendszert egy flexibilis rendszernek tartják. Ez alatt azt értjük, hogy könnyedén testre szabható (más szempontok szerint kell útvonalat tervezni például kormányzati közlekedésnek, hatósági vagy életmentő beavatkozások során). A CSTS rendszer bizonyítja, hogy a rendszer valóban rugalmas, amely ezzel egy nagy lépést tett a céljai felé. 
 
+\vspace{2mm}
 Megjegyezzük, hogy az adatgyűjtő rendszer rendben működött a tesztelési fázis során. Az objektumfelismerő algoritmus csaknem minden járművet felismert, pontos pozíciót tudott szolgáltatni, valamint az adatok rendben megérkeztek a szerveralkalmazásunkhoz. A Robocar City Emulator egy kisebb fejlesztés után képes volt szimulálni a valós adatokon alapuló forgalmi viszonyokat. 
 
+\newpage
 \section{Forgalomszimuláció az OOCWC rendszerben}
 
 A CSTS rendszerben a szimuláció kezdeti állapotában a járműveket a mért adatok alapján számolt eloszlás szerint tettük fel a térképre. Ez látható a \ref{simulinit} ábrán. Célunk volt annak megfigyelése, hogyan változik a szimuláció során az autók eloszlása a kezdeti eloszláshoz képest. A \ref{hista}, \ref{histb} és \ref{histc} diagramokon láthatjuk, hogyan változik az eloszlás a szimuláció futásával. (A szimuláció Debrecen város gráffal reprezentált térképén értelmezett.) Az x tengelyen az utcákat, az y tengelyen az azonos utcán található autók számát jelöltük. Csak azok az utcák reprezentáltak a hisztogramon, amelyek legalább egy autót tartalmaznak. A hisztogramok Debrecen utcáit a rajtuk található autók száma szerint rendezve mutatják csökkenő sorrendben. (Forrás: \cite{infocomjournal}.) Érdemes megfigyelni, hogy az eloszlás jellege (Pareto) nem változik a szimuláció során, viszont az utcák sorrendje felcserélődik. Természetes, hogy új utcák lépnek be az eloszlásba, viszont fontos kritérium, hogy az utcák sorrendje nem változhat a szimuláció során. (Meg kell követelnünk a szimulációs algoritmustól egyféle stacionaritást.) Jelenleg az OOCWC-ben található szimulációs algoritmus nem teljesíti ezt a feltételt.
@@ -463,16 +510,22 @@ A tesztelés során 10000 járművet inicializáltunk a mért adatokon számolt 
 
 A fejlesztési folyamat során készítettünk egy gyors prototípust, a Real-time Traffic Analyzert. Mivel prototípusról van szó, egy tesztelési fázis még hátra van. Próbamérést ugyan végeztünk, de azt csupán egy eszközzel, egy viszonylag kis mintán. Már megkezdődött annak a munkának az előkészítése, amellyel több eszközzel (15-20 db), egész Debrecenre kiterjedő, folyamatos mérést fogunk végezni. Ez az előkészítés több oldalról is fejlesztést igényel. Habár az eszköz működőképes, szükséges megvizsgálnunk, hogyan építhető be járművekbe. Ehhez pontosan kell ismernünk az adott jármű tulajdonságait, hiszen nem ugyanazon elvek szerint alkalmazható egy ilyen eszköz egy buszban vagy egy személygépjárműben, esetleg villamoson. A teszteléshez használt eszközparkot ennek fényében kell bővítenünk.
 
+\vspace{2mm}
 Az eszközpark bővítése után elvégezhető nagy tömegű mérés miatt szükséges a Robocar City Cloud alrendszer felépítése is. Ez egy olyan felhő alapú szolgáltatás, amely egyrészről a gyűjtött adatok tárolását, valamint azok aggregációját, feldolgozását teszi lehetővé.
 
+\vspace{2mm}
 A Real-time Traffic Analyzer jelenleg egy adatgyűjtő rendszer része, de terveink között szerepel egy szabványos interface kialakítása a városi forgalom-adminisztrációs rendszer és a jármű között. Tervünk, hogy ez az eszköz lesz a kapcsolat a smart city alkalmazás és a jármű között. Ezt kétféleképpen oldhatjuk meg, egyrészt egy megjelenítőt építünk a rendszerbe, vagy a jármű fedélzeti elektronikájához és közvetve a szórakoztató-navigációs központhoz csatlakoztatjuk az RTTA-t.
 
+\vspace{2mm}
 Az OOCWC Robocar City Emulator modulját tekintve megmutattuk, hogy a jelenleg a rendszer részének tekinthető szimulációs algoritmus nem megfelelő valós forgalom szimulálására. Pillanatnyilag a rendszerben kétféle szimulációs algoritmus implementált. Egyrészt egy véletlenszerű bolyongásnak tekinthető (random walk), amelynek működési elve, hogy az egyes járművek inicializáláskor véletlenszerűen választanak egy útpontot a térképen és elindulnak. Amint elérik, választanak egy másikat (ugyancsak véletlenszerűen) és így tovább, egészen a szimuláció végéig. 
 
+\vspace{2mm}
 A másik szimulációs algoritmus az ún. hangyaszimuláció. Ennek lényege, hogy -- a hangyakolóniáknál is ismert módon -- az egyes járművek egy ``feromoncsíkot'' húznak maguk után. A többi jármű ezt az útvonalat követi. Ennek eredménye, hogy amerre az autók mozognak, arra mozog a többi is. (A hangyaszimulációkról részletesebben \cite{ant1} és \cite{ant2}).
 
+\vspace{2mm}
 Célunk tehát, hogy egy olyan szimulációs algoritmust fejlesszünk, amely tartja azt az eloszlást, amelyet a mérések adnak a számunkra.
 
+\vspace{2mm}
 Az adatgyűjtés kapcsán fontos a validáció. Több, jelenleg is működő rendszer végez adatgyűjtést (pl. Google Maps), de azok sokszor nem elég jó felbontásúak, valamint nem adnak 100\%-os képet az aktuális viszonyokról. A validáló módszer a terveink szerint egy olyan alrendszer kidolgozásán alapul, ahol az egyes adatgyűjtő rendszerek egy súlyozott kombinációját számolnánk, ahol a súlyokat egy paraméterhalmazként tekintenénk. Ezt a paraméterhalmazt szimulált hűtéssel finomítanánk, ahol a célhőmérsékletet egy ground-truth értékkel biztosítanánk. A ground-truth értéket az OOCWC Human controlled Sensor Annotations (Emberi Mérések) alrendszere adná. Szükséges tehát ennek az alrendszernek a kifejlesztése is, ahol az egyes mérésben résztvevők a saját mobiltelefonjukon futó, erre a célra kifejlesztett software-eket használnák.
 
 \chapter{Összefoglalás}
@@ -480,18 +533,25 @@ Az adatgyűjtés kapcsán fontos a validáció. Több, jelenleg is működő ren
 
 A Smart City kutatási-fejlesztési terület egyre aktívabb. Folyamatosan látnak napvilágot olyan IT megoldások, amelyek a városi lakosság mindennapjait hivatottak megkönnyíteni. Kiemelt terület a városi közlekedés, mely a prognosztizált népesség áthelyeződéssel egyre több problémával fog szembesülni. Fontos cél, hogy a növekvő urbanizáció mellett egy intelligens, kiszámítható, környezetbarát közlekedési metodika jellemezze a hétköznapokat.
 
+\vspace{2mm}
 A közlekedést tekintve az autóipar egy paradigmaváltás közepén van. Egyrészt az önjáró autók kutatása, fejlesztése egyre több nagy gyártó látókörébe kerül, ahol az úttörőnek számító Google már a piaci bevezetés folyamatában van. Másrészről a hagyományosan fosszilis energiahordozókon alapuló hajtásláncok is a megújuló, elektromos energiát hasznosító járműveknek adják át a piaci kínálatot.
 
+\vspace{2mm}
 A fenti okok indukálták a dolgozat témájául szolgáló adatgyűjtő rendszert. Fontos, hogy a közlekedés folyamatos monitorozásával képet kapjunk a városban található viszonyokról. 
 
+\vspace{2mm}
 A dolgozat témájául szolgáló Real-time Traffic Analyzer egy járművekbe építhető hardware és software komponensek együttese. A tervezése során minden olyan tényezőt figyelembe vettünk, mellyel a hatékonyságát maximalizálhatjuk. A rendszer képes valós időben forgalmat mérni a forgalmi egység környezetében, előfeldolgozással kinyerni a nyers videóállományból a számunkra releváns adatokat, valamint a pontos pozíciójával együtt elküldeni egy szerveralkalmazásnak. Az adatgyűjtő eszköz egy tesztelési folyamatot már teljesített, ahol Debrecen egy kis részét mértük fel.
 
+\vspace{2mm}
 A próbamérés során szerzett adatokat egy egyszerű szöveges file-ban reprezentáltuk, majd bementként adtuk a Robocar World Championship framework Robocar City Emulatorának. Az OOCWC rendszer alkalmasnak bizonyult a feladatra, képes volt az RTTA által gyűjtött adatok alapján, azzal egyező eloszlásban inicializálni egy szimulációt. Mivel a rendszer alapvetően könnyen testreszabható különféle szcenáriókra, így csak egy rövid fejlesztési folyamatot igényelt ennek beépítése.
 
+\vspace{2mm}
 Ugyan a rendszer -- egy rövid fejlesztés után -- képes volt fogadni az adatokat, megmutattuk, hogy a szimulációs algoritmus nem alkalmas valós városi közlekedés szimulációjára. Az eloszlástartó algoritmus fejlesztése jelenleg is folyamatban van. 
 
+\vspace{2mm}
 Lényeges összetevője lesz a rendszernek a Robocar City Cloud, mely az adatok fogadását, azok aggregációját, elemzését fogja végezni. Az általunk gyűjtött adatokat folyamatosan fogjuk validálni mind kézi méréssel, mind más szolgáltatók által végzett mérésekkel.
 
+\vspace{2mm}
 Reményeink szerint az RTTA és az OOCWC hamarosan alkalmas lesz éles bevetésre is. Ezáltal, valamint a robotautók várható elterjedésével nem túlzás kijelenteni, a Smart City kutatási, fejlesztési terület át fogja adni a helyét egy új, izgalmas területnek, amelyet Automated City néven fogunk ismerni.
 
 \addcontentsline{toc}{chapter}{Irodalomjegyzék}
@@ -535,7 +595,7 @@ A Crowd-sourced Traffic Simulator projekt nyílt forráskódú (GNU GPL v3), sza
 A Robocar World Championship hivatalos oldala, illetve a tároló: \cite{oocwcrepo}.
 
 \noindent
-A CSTS tárolójában található dokumentáció (\cite{csts}/real-time-traffic-analyzer/doc/traf-analy-eng-pdf) valamint telepítési útmutató (\cite{csts}/real-time-traffic-analyzer/XUP\_notes.txt) a diplomamunka mellékletének tekintendő.
+A CSTS tárolójában található dokumentáció (\cite{csts}/real-time-traffic-analyzer/doc/traf-analy-eng.pdf) valamint telepítési útmutató (\cite{csts}/real-time-traffic-analyzer/XUP\_notes.txt) a diplomamunka mellékletének tekintendő.
 
 \addcontentsline{toc}{chapter}{Egyéb tudnivalók}
 
