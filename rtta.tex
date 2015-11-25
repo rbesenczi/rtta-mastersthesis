@@ -342,7 +342,11 @@ Látható, hogy az eszköz nem a nyers képi adatot küldi a szerverünknek, han
 
 \lstinputlisting[language=C, caption=Protocol Buffers üzenetformátum, label=protoobject]{src/TrafficAnalytics.proto}
 
+Ez a fajta előfeldolgozás több szempontból is hasznos. Más rendszereknél gyakran előforduló metodika, hogy a videóállományt egy az egyben továbbítják egy központi feldolgozó felé. Ebben a felállásban az átvitt adat mennyisége jelentős, függ a videó felbontásától, annak kódolásától, tömörítésétől, stb. Emellett több eszköz esetén, minden eszközről érkező adat egy központi rendszerben kerül kiértékelésre, feldolgozásra, amely jelentős terhelést jelent. A mi megoldásunk ezzel szemben áll. A kiértékelést lokálisan, az adatgyűjtő eszközön végezzük, így az a központi feldolgozó rendszernek nem jelent többletterhelést. Emellett az adatátviteli csatornát sem terheljük a videóállomány nagy méretével, hanem csak percenként pár kB-nyi adat kerül elküldésre.
+
 A rendszerhez a tesztelhetőség érdekében készítettünk egy asztali PC-n futtatható alkalmazást. A program egy MQTT bróker alkalmazás, amihez az egyes adatgyűjtő eszközök kapcsolódnak, ide küldik az általuk gyűjtött adatokat. A program bemenete tehát az eszközökről érkező adatok, kimenete pedig egy egyszerű szöveges file, amely az OOCWC rendszer bemeneteként szolgál. Erről részletesebben a következő fejezetben beszélünk.
+
+Itt jegyezzük meg, hogy a rendszer jelen működési paramétereivel nem teremt személyiségi jogi aggályokat. Az informatikai rendszereknél, ahol a civil környezet monitorozása a feladat, a személyiségi jogok védelme kiemelt fontosságú. Jelen rendszer működése során nem továbbít, nem rögzít személyiségi jogi szempontból érzékeny vagy kiemelten érzékeny adatot, a gyűjtött adatokból a rendszer segítségével személyiségi jogokat sértő tényállás nem teremthető. (Más rendszereknél példaként említhető, hogy a Google StreetView rendszer is a felismerhetőség ellehetetlenítésével védi a személyiségi jogokat, például az arcok, rendszámtáblák kitakarásával.) A RTTA és a CSTS rendszereknél a működési elvük implikálja, hogy jogi aggályok nem vetődhetnek fel (a videóállomány feldolgozása csak a jármű, mint objektum felismerésére terjed ki, sem a rendszámtábla, sem a jármű egyéb tulajdonsága nem kerül feljegyzésre vagy továbbításra.)
 
 \section{Fejlesztőeszközök}
 \label{dev}
