@@ -399,7 +399,7 @@ A mért adatok alapján inicializált szimuláció kezdőállapotát a \ref{simu
 \begin{figure}[h]
 \centerline{
 \includegraphics[width=6in]{img/ut3}}
-\caption{A mért adatok alapján inicializált szimuláció kezdőállapota. A bementi file az alábbi három sort tartalmazta: Kassai \'ut 789 \textbackslash  Egyetem sug\'ar\'ut 317  \textbackslash  F\"uredi \'ut 559.}
+\caption{A mért adatok alapján inicializált szimuláció kezdőállapota. A bementi file az alábbi három sort tartalmazta: Kassai \'ut 789 \textbackslash  Egyetem sug\'ar\'ut 317  \textbackslash  F\"uredi \'ut 559. Forrás: \cite{infocomjournal}.}
 \label{simulinit}
 \end{figure}
 
@@ -422,7 +422,7 @@ Megjegyezzük, hogy az adatgyűjtő rendszer rendben működött a tesztelési f
 
 \section{Forgalomszimuláció az OOCWC rendszerben}
 
-A CSTS rendszerben a szimuláció kezdeti állapotában a járműveket a mért adatok alapján számolt eloszlás szerint tettük fel a térképre. Ez látható a \ref{simulinit} ábrán. Célunk volt annak megfigyelése, hogyan változik a szimuláció során az autók eloszlása a kezdeti eloszláshoz képest. A \ref{hista}, \ref{histb} és \ref{histc} diagramokon láthatjuk, hogyan változik az eloszlás a szimuláció futásával. (A szimuláció Debrecen város gráffal reprezentált térképén értelmezett.) Az x tengelyen az utcákat, az y tengelyen az azonos utcán található autók számát jelöltük. Csak azok az utcák reprezentáltak a hisztogramon, amelyek legalább egy autót tartalmaznak. A hisztogramok Debrecen utcáit a rajtuk található autók száma szerint rendezve mutatják csökkenő sorrendben. Érdemes megfigyelni, hogy az eloszlás jellege (Pareto) nem változik a szimuláció során, viszont az utcák sorrendje felcserélődik. Természetes, hogy új utcák lépnek be az eloszlásba, viszont fontos kritérium, hogy az utcák sorrendje nem változhat a szimuláció során. (Meg kell követelnünk a szimulációs algoritmustól egyféle stacionaritást.) Jelenleg az OOCWC-ben található szimulációs algoritmus nem teljesíti ezt a feltételt.
+A CSTS rendszerben a szimuláció kezdeti állapotában a járműveket a mért adatok alapján számolt eloszlás szerint tettük fel a térképre. Ez látható a \ref{simulinit} ábrán. Célunk volt annak megfigyelése, hogyan változik a szimuláció során az autók eloszlása a kezdeti eloszláshoz képest. A \ref{hista}, \ref{histb} és \ref{histc} diagramokon láthatjuk, hogyan változik az eloszlás a szimuláció futásával. (A szimuláció Debrecen város gráffal reprezentált térképén értelmezett.) Az x tengelyen az utcákat, az y tengelyen az azonos utcán található autók számát jelöltük. Csak azok az utcák reprezentáltak a hisztogramon, amelyek legalább egy autót tartalmaznak. A hisztogramok Debrecen utcáit a rajtuk található autók száma szerint rendezve mutatják csökkenő sorrendben. (Forrás: \cite{infocomjournal}.) Érdemes megfigyelni, hogy az eloszlás jellege (Pareto) nem változik a szimuláció során, viszont az utcák sorrendje felcserélődik. Természetes, hogy új utcák lépnek be az eloszlásba, viszont fontos kritérium, hogy az utcák sorrendje nem változhat a szimuláció során. (Meg kell követelnünk a szimulációs algoritmustól egyféle stacionaritást.) Jelenleg az OOCWC-ben található szimulációs algoritmus nem teljesíti ezt a feltételt.
 
 \begin{figure}[h]
 \centerline{
@@ -450,7 +450,7 @@ A tesztelés során 10000 járművet inicializáltunk a mért adatokon számolt 
 \begin{figure}[h]
 \centerline{
 \includegraphics[scale=.5]{img/a33}}
-\caption{Pillanatkép a szimulációból.}
+\caption{Pillanatkép a szimulációból. Forrás: \cite{infocomjournal}.}
 \label{simultenth}
 \end{figure}
 
@@ -575,7 +575,7 @@ along with CSTS. If not, see <http://www.gnu.org/licenses/>.
 
 \begin{singlespace}
 
-A szerző szeretne köszönetet mondani a Robocar World Championship, valamint a Smart City kutatócsoportok tagjainak. A kutatócsoport tagjai (a teljesség igénye nélkül): dr. Ispány Márton egyetemi docens, dr. Bátfai Norbert egyetemi adjunktus, Mamenyák András hallgatótársam, valamint a reguláris oktatásban részt vevő prog1-es és prog2-es hallgatók.
+A szerző szeretne köszönetet mondani a Robocar World Championship, valamint a Smart City kutatócsoportok tagjainak. A kutatócsoport tagjai (a teljesség igénye nélkül): dr. Ispány Márton egyetemi docens, dr. Bátfai Norbert egyetemi adjunktus, Mamenyák András hallgatótársam, valamint a reguláris oktatásban részt vevő prog1-es és prog2-es hallgatók. Külön köszönet Kóti Balázsnak a grafikai elemek megtervezéséért.
 
 Külön szeretném kiemelni, hogy témavezetőm, jóbarátom Bátfai Norbi munkája, építő tanácsai és kivételes öszintesége nélkül ma ezt a munkát nem olvashatná a kedves olvasó. Mindezekért külön köszönet illeti.
 
