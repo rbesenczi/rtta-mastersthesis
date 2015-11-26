@@ -142,7 +142,7 @@ Debrecen
 A tömegérzékelés (crowd-sensing és crowd-sourcing) egy olyan eszközkészlet, mellyel bizonyos méréseket végezhetünk a lakosságra nézve, illetve a lakosság bevonásával. Ezek a mérések kiemelt szerepet játszanak az egyes döntési folyamatok során, valamint bemeneti adatként szolgálhatnak különféle szcenárióelemzésekhez, vagy akár konkrét szimulációkhoz is (ahogyan azt a dolgozat következő fejezeteiben is látni fogjuk). Egészen pontosan fogalmazva: a városi lakosságról ily módon szerezhetünk konkrét információkat, elemezhetjük szokásaikat egy számunkra érdekes kontextusban (például: hogyan közlekednek a városon belül). Habár a mérés az egyén szintjén történik, a lényeges információ nem ezen a szinten jelentkezik, így az elemzést egy aggregált, absztrakt szinten, a tömeg szintjén végezzük (individual level processing, crowd level analysis).
 
 \vspace{2mm}
-A korábbi években igen sok fejlődés tapasztalható az autó gyártásban, elsősorban az autonóm autók kapcsán. Egyre több autógyártó és techóriás fejleszt robotautót, mint például a területen úttörő Google (a fejlesztői prototípus a \ref{googleauto} képen látható) vagy a Volkswagen cégcsoport, de a Tesla elektromos autó gyártó termékei is egyre inkább önjáróak. Ezek a trendek folyamatosan gyorsulni látszanak. A 2000-es és 2010-es éveket főként az autókba épített, vezetőt segítő elektronikai eszközök uralták (úgymint a gyalogosfigyelő rendszerek, sávelhagyásra figyelmeztető rendszerek, stb.), a 2020-as éveket várhatóan az autonóm autók széles körű elterjedése fogja meghatározni. Ezek mellett a tisztán elektromos hajtású, valamint 2015-től a piacon is elérhető hidrogénhajtású autók is egyre szélesebb körben elérhetőek. Világosan látható, hogy az autóipar paradigmaváltás előtt áll. A vezetői élmény jelentősége és a fosszilis energiaforrásokon alapú hajtásláncok folyamatosan visszaszorulnak, helyettük a hosszú távon is fenntartható, környezetbarát, az utazást, mint pihentető, emberbarát eseményt vizionáló megoldások kerülnek a figyelem középpontjába.
+A korábbi években igen sok fejlődés tapasztalható az autógyártásban, elsősorban az autonóm autók kapcsán. Egyre több autógyártó és techóriás fejleszt robotautót, mint például a területen úttörő Google (a fejlesztői prototípus a \ref{googleauto}. képen látható) vagy a Volkswagen cégcsoport, de a Tesla elektromos autó gyártó termékei is egyre inkább önjáróak. Ezek a trendek folyamatosan gyorsulni látszanak. A 2000-es és 2010-es éveket főként az autókba épített, vezetőt segítő elektronikai eszközök uralták (úgymint a gyalogosfigyelő rendszerek, sávelhagyásra figyelmeztető rendszerek, stb.), a 2020-as éveket várhatóan az autonóm autók széleskörű elterjedése fogja meghatározni. Ezek mellett a tisztán elektromos hajtású, valamint 2015-től a piacon is elérhető hidrogénhajtású autók is egyre szélesebb körben elérhetőek. Világosan látható, hogy az autóipar paradigmaváltás előtt áll. A vezetői élmény jelentősége és a fosszilis energiaforrásokon alapú hajtásláncok folyamatosan visszaszorulnak, helyettük a hosszú távon is fenntartható, környezetbarát, az utazást, mint pihentető, emberbarát eseményt vizionáló megoldások kerülnek a figyelem középpontjába.
 
 \begin{figure}[h]
 \centerline{
@@ -180,7 +180,7 @@ Az adatgyűjtés fontos alapokat szolgáltat az okos város alkalmazásoknak. Le
 Tehát a két módszer a felhasználó részvétele alapján különíthető el. A crowd-sourcing esetében a felhasználó megfigyel valamilyen eseményt, és valamilyen eszköz használatával küld adatot (participatory sensing). Ilyen adatgyűjtő rendszerek találhatóak a \cite{szabo2013framework} közleményben, illetve egy rendszer implementációjának részletes leírása a \cite{besenczi2013kozossegi} szakdolgozatban. Ezzel szemben a crowd-sensing nem igényel emberi beavatkozást, a rendszer autonóm módon működik.
 
 \vspace{2mm}
-A rendszer által gyűjtött adatok a Robocar World Championship (vagy röviden OOCWC) rendszer bemeneteként szolgáltak. A OOCWC rendszer célja, hogy az autonóm autók és az okos városok közötti összefüggéseket vizsgálja, kutatási valamint oktatási platform. A rendszer felépítését az \ref{basedesign} ábra szemlélteti.
+A rendszer által gyűjtött adatok a Robocar World Championship (vagy röviden OOCWC) rendszer bemeneteként szolgáltak. A OOCWC rendszer célja, hogy az autonóm autók és az okos városok közötti összefüggéseket vizsgálja, kutatási valamint oktatási platform. A rendszer felépítését az \ref{basedesign}. ábra szemlélteti.
 
 \begin{figure}[h]
 \centerline{
@@ -211,7 +211,7 @@ A rendszer másik célja, hogy egy verseny segítségével találjuk meg a lehet
 A rendszer kutatói-fejlesztői folyamata az agilis metodikát követi, gyors prototípusfejlesztéssel az egyes komponensekre. Jelenleg az emulátort tekintve két implementáció létezik, egyrészt a ``Justine'' \cite{oocwcrepo}, másrészt a ``Justina'' \cite{justinarepo}. Mindkét megvalósítás nyílt forráskódú. A rendszerről további információk olvashatóak a \cite{7231223}, valamint \cite{infocomjournal} közleményekben, a ``Justina'' részletes implementációja pedig a \cite{mamenyak2015robotauto} szakdolgozatban.
 
 \vspace{2mm}
-Kiemelendő, hogy a rendszer magas fokú alkalmazkodó képességgel rendelkezik. Más és más jellegű útvonaltervezés szükséges kormányzati közlekedéshez, vészhelyzetek esetében, stb. Az oktatási és kutatási oldal támogatására került kifejlesztésre a ``Police Edition'' (egy-egy pillanatkép ebből a változatból a \ref{police} ábrán látható). A cél, hogy rendőr ágensekkel, melyeket a kutató által implementált irányító algoritmus vezérel, minél több gengszter ágenst kapjunk el. Egy ilyen implementációra láthatunk példát a \cite{forkcoginfocom} absztraktban.
+Kiemelendő, hogy a rendszer magas fokú alkalmazkodó képességgel rendelkezik. Más és más jellegű útvonaltervezés szükséges kormányzati közlekedéshez, vészhelyzetek esetében, stb. Az oktatási és kutatási oldal támogatására került kifejlesztésre a ``Police Edition'' (egy-egy pillanatkép ebből a változatból a \ref{police}. ábrán látható). A cél, hogy rendőr ágensekkel, melyeket a kutató által implementált irányító algoritmus vezérel, minél több gengszter ágenst kapjunk el. Egy ilyen implementációra láthatunk példát a \cite{forkcoginfocom} absztraktban.
 
 \vspace{2mm}
 Az OOCWC rendszerben a szimulációt a gyűjtött adatok alapján inicializáljuk. A rendszer jelenleg háromféle forgalmi egységet különböztet meg, routine cars, smart cars és guided cars. A szimuláció kezdőállapota a routine cars és smart cars elhelyezése a térképen a gyűjtött adatok alapján. (Lásd később részletesen.)
@@ -252,7 +252,7 @@ Az algoritmus hatékonyságát tekintve megjegyezhetjük, hogy egy Apple MacBook
 Az adatgyűjtő rendszer hardware és software komponensekből épül fel. A rendszer a Real-time Traffic Analyzer (RTTA) nevet viseli, nyílt forráskódú (GNU GPL v3) és elérhető a projekt tárolójából \cite{rtta}. Megjegyezzük, hogy ez csupán maga az adatgyűjtő rendszer. A kimeneti adatokat aggregáció után az OOCWC rendszerben teszteltük. Ehhez szükséges volt annak módosítása, hogy fogadni tudja az adatainkat, így egy fork implementációt készítettünk. Az adatgyűjtő rendszerrel együtt ez a projekt Crowd-sourced Traffic Simulator (CSTS) néven elérhető a GitHubon \cite{csts}. 
 
 \vspace{2mm}
-Ebben a fejezetben részletesen leírjuk a tervezés lépéseit, milyen szempontok szerint képzeltük a rendszer működését. Ezután részletesen kitérünk az egyes alkotóelemekre, majd a következő fejezetben a CSTS működésére. Ezt követően leírjuk az implementáció során használt fejlesztőeszközöket, majd a tesztelési fázis leírása következik.
+Ebben a fejezetben részletesen leírjuk a tervezés lépéseit, milyen szempontok szerint képzeltük a rendszer működését. Ezután részletesen kitérünk az egyes alkotóelemekre. Ezt követően leírjuk az implementáció során használt fejlesztőeszközöket, majd a tesztelési fázis leírása következik.
 
 \newpage
 \section{Tervezés}
@@ -294,7 +294,7 @@ Ebben a fejezetben részletesen leírjuk a rendszer hardware illetve software ko
 \subsection{Hardware}
 \label{rttahw}
 
-A rendszer sémája a \ref{rttaschema} ábrán, a részletes felépítése pedig a \ref{detailedscheme} ábrán látható.
+A rendszer sémája a \ref{rttaschema}. ábrán, a részletes felépítése pedig a \ref{detailedscheme}. ábrán látható.
 
 \begin{figure}[h]
 \centerline{
@@ -330,7 +330,7 @@ Képrögzítéshez szerettünk volna egy könnyen paraméterezhető eszközt has
 Fontos kiemelnünk, hogy a jövőben egy CAN buszt is beépítünk a hardware design-ba, így ez az eszköz fog kommunikálni az autóval. Ennek jelentőségére a későbbi fejezetekben térünk ki.
 
 \vspace{2mm}
-A rendszer jelenlegi állapota a \ref{currentsys} képen látható.
+A rendszer jelenlegi állapota a \ref{currentsys}. képen látható.
 
 \begin{figure}[h]
 \centerline{
@@ -355,22 +355,22 @@ Az ezen futó software három részből épül fel.
 \item GSM modul.
 \end{itemize}
 
-A program inicializálja az egyes modulokat, majd minden egyes modult külön szálon elindít. Ez látható a \ref{main} kódrészletben.
+A program inicializálja az egyes modulokat, majd minden egyes modult külön szálon elindít. Ez látható a \ref{main}. kódrészletben.
 
 \lstinputlisting[language=C++, caption=A program működése, label=main]{src/main.c}
 
-A GPS modul egyszerűen kiolvassa az eszközről érkező, számunkra lényeges adatokat, majd egy struktúrában eltárolja. Ez látható a \ref{gpsstruct} kódrészletben.
+A GPS modul egyszerűen kiolvassa az eszközről érkező, számunkra lényeges adatokat, majd egy struktúrában eltárolja. Ez látható a \ref{gpsstruct}. kódrészletben.
 
 \lstinputlisting[language=C++, caption=A GPS adatstruktúra a számunkra lényeges adatokkal, label=gpsstruct]{src/gpsstruct.cpp}
 
 Kommunikációs protokollnak az MQTT-t választottuk. Az MQTT egy kifejezetten a \emph{machine-to-machine} típusú kommunikációra kifejlesztett, alacsony overhead-del bíró protokoll. Alapjaiban egy publish/subscribe paradigmát követő megoldás. Kifejezetten jó alacsony fogyasztású eszközök, illetve kis kommunikációs sávszélesség esetén \cite{mqtt}. 
 
 \vspace{2mm}
-A képfeldolgozó algoritmus egy Haar-cascade osztályozáson alapuló objektumfelismerés \cite{violacascade} \cite{haaremp}. Az osztályozás alapjául szolgáló betanított cascade file forrása: \cite{cascade}. A videóstream inicializálása után, minden egyes képet egy Mat típusú objektumban tárolunk, majd a \ref{detectimage} kódrészlettel objektumokat keresünk. 
+A képfeldolgozó algoritmus egy Haar-cascade osztályozáson alapuló objektumfelismerés \cite{violacascade} \cite{haaremp}. Az osztályozás alapjául szolgáló betanított cascade file forrása: \cite{cascade}. A videóstream inicializálása után, minden egyes képet egy Mat típusú objektumban tárolunk, majd a \ref{detectimage}. kódrészlettel objektumokat keresünk. 
 
 \lstinputlisting[language=C++, caption=Objektumdetektálás OpenCV-ben, label=detectimage]{src/detectimg.cpp}
 
-Látható, hogy az eszköz nem a nyers képi adatot küldi a szerverünknek, hanem előfeldolgozást végez. A küldött adat formátumát a Google Protocol Buffers segítségével készítettük el. Az üzenet formátuma a \ref{protoobject} kódrészletben látható. 
+Látható, hogy az eszköz nem a nyers képi adatot küldi a szerverünknek, hanem előfeldolgozást végez. A küldött adat formátumát a Google Protocol Buffers segítségével készítettük el. Az üzenet formátuma a \ref{protoobject}. kódrészletben látható. 
 
 \lstinputlisting[language=C, caption=Protocol Buffers üzenetformátum, label=protoobject]{src/TrafficAnalytics.proto}
 
@@ -389,12 +389,12 @@ Itt jegyezzük meg, hogy a rendszer jelen működési paramétereivel nem teremt
 Amint az látható, a rendszer heterogén a felépítését tekintve, ezért több fejlesztőeszköz is szükséges. A hardware design fejlesztését a Xilinx Vivado Design Suite 2014.4-es verziójával végeztük. Az általunk korábban használt fejlesztői eszközhöz képest (Xilinx ISE Design Suite) sok változáshoz kellett alkalmazkodnunk. Míg az ISE alacsony szintű tervezést és implementációt követel meg -- tehát a konkrét Verilog vagy VHDL modul programozását -- addig a Vivado más szempontú fejlesztést tesz lehetővé (természetesen emellett megmaradt a modul programozásának lehetősége is). Ebben a fejlesztői környezetben az egyes kész modulok rendszerbe illesztését egy egyszerűbb, átláthatóbb grafikus felületen tudjuk elvégezni. A mi implementációnk is hasonlóan készült. Első lépésként definiálnunk kell, hogy egy ELS rendszert szeretnénk Zybo development boardon készíteni, majd az egyes perifériákat kell felfűzni a rendszerhez. Fontos megjegyeznünk, hogy nem minden esetben áll rendelkezésünkre előre leírt modul, nekünk a GPS modul működését kellett alacsony szinten definiálnunk.
 
 \vspace{2mm}
-Az eszközön futó operációs rendszer egyszerűen beépíthető volt a rendszerünkbe, csupán pár apró módosítást kellett elvégeznünk. Ilyen típusú rendszereknél a Linux kernelhez szükséges hozzáadnunk egy általunk definiált ún. device tree-t. Ez a device tree határozza meg, hogy a beágyazott rendszert futtató hardware eszközön az egyes kivezetések (I/O portok) hol helyezkednek el, hol érhetőek el. Ha ezt sikeresen elkészítettük, a Linuxon belülről minden perifériát az ilyen rendszereknél szokott módon, file-ként tudunk kezelni. Számunkra konkrétan ez azt jelenti, hogy például a GPS modultól érkező adatok egy egyszerű file-ból olvasással, a GSM modul felé küldött adatokat pedig egy egyszerű file-ba írással tudjuk elvégezni. Ilyenre láthatunk példát a \ref{fileops} forráskód részletben. Az első blokk megnyitja olvasásra a GPS modulhoz rendelt file-t, a második pedig elkezdi olvasni. A harmadik blokkban a kameramodulhoz tartozó file-t nyitjuk meg.
+Az eszközön futó operációs rendszer egyszerűen beépíthető volt a rendszerünkbe, csupán pár apró módosítást kellett elvégeznünk. Ilyen típusú rendszereknél a Linux kernelhez szükséges hozzáadnunk egy általunk definiált ún. device tree-t. Ez a device tree határozza meg, hogy a beágyazott rendszert futtató hardware eszközön az egyes kivezetések (I/O portok) hol helyezkednek el, hol érhetőek el. Ha ezt sikeresen elkészítettük, a Linuxon belülről minden perifériát az ilyen rendszereknél szokott módon, file-ként tudunk kezelni. Számunkra konkrétan ez azt jelenti, hogy például a GPS modultól érkező adatok egy egyszerű file-ból olvasással, a GSM modul felé küldött adatokat pedig egy egyszerű file-ba írással tudjuk elvégezni. Ilyenre láthatunk példát a \ref{fileops}. forráskód részletben. Az első blokk megnyitja olvasásra a GPS modulhoz rendelt file-t, a második pedig elkezdi olvasni. A harmadik blokkban a kameramodulhoz tartozó file-t nyitjuk meg.
 
 \newpage
 \lstinputlisting[language=C++, caption=File műveletek a software-ben, label=fileops]{src/fileoperations.cpp}
 
-A Linux rendszeren futó software-ünket hagyományos Linux/UNIX környezetben tudtuk fejleszteni. Ehhez a KDevelop fejlesztői IDE-t használtuk, szabványos C++11 programnyelven, POSIX szálak segítségével. A képfeldolgozó algoritmust először ki szerettük volna próbálni PC-s környezetben. Ennek oka, hogy jelenleg a RTTA eszközön a megjelenítés nincs implementálva, tulajdonképpen a működést nem tudjuk vizuálisan validálni. A PC-s program ugyanazt az objektumfelismerő algoritmust használja Haar-cascade alapú osztályozás segítségével. A program futását a \ref{rttapc} képen láthatjuk. Bal oldalon látható a videófelvétel (amely egy Apple iPhone 5S-sel készült), itt tájékoztató jellegű adatokat is feltüntettünk, úgymint aktuális pozíció, pontos idő, a felvétel időbélyege, valamint az adott utcán számolt járművek száma. A könnyebb értelmezhetőség érdekében készítettünk egy modult, mellyel térképen tudjuk szemléltetni a bejárt útvonal terheltségét. Ez látható a jobb oldali képen. A \ref{carredrect} képen látható, hogy az algoritmus sikeresen felismeri a járművet a felvételen.
+A Linux rendszeren futó software-ünket hagyományos Linux/UNIX környezetben tudtuk fejleszteni. Ehhez a KDevelop fejlesztői IDE-t használtuk, szabványos C++11 programnyelven, POSIX szálak segítségével. A képfeldolgozó algoritmust először ki szerettük volna próbálni PC-s környezetben. Ennek oka, hogy jelenleg a RTTA eszközön a megjelenítés nincs implementálva, tulajdonképpen a működést nem tudjuk vizuálisan validálni. A PC-s program ugyanazt az objektumfelismerő algoritmust használja Haar-cascade alapú osztályozás segítségével. A program futását a \ref{rttapc}. képen láthatjuk. Bal oldalon látható a videófelvétel (amely egy Apple iPhone 5S-sel készült), itt tájékoztató jellegű adatokat is feltüntettünk, úgymint aktuális pozíció, pontos idő, a felvétel időbélyege, valamint az adott utcán számolt járművek száma. A könnyebb értelmezhetőség érdekében készítettünk egy modult, mellyel térképen tudjuk szemléltetni a bejárt útvonal terheltségét. Ez látható a jobb oldali képen. A \ref{carredrect}. képen látható, hogy az algoritmus sikeresen felismeri a járművet a felvételen.
 
 \begin{figure}[h]
 \centerline{
@@ -439,7 +439,7 @@ A \ref{nodesel}. forráskódrészletben látható az egyes járművek elhelyezé
 
 \lstinputlisting[language=C++, caption=Az inicializálás működése, label=nodesel]{src/nodeselect.cpp}
 
-A mért adatok alapján inicializált szimuláció kezdőállapotát a \ref{simulinit} ábrán láthatjuk. 
+A mért adatok alapján inicializált szimuláció kezdőállapotát a \ref{simulinit}. ábrán láthatjuk. 
 
 \begin{figure}[h]
 \centerline{
@@ -473,7 +473,7 @@ Megjegyezzük, hogy az adatgyűjtő rendszer rendben működött a tesztelési f
 \newpage
 \section{Forgalomszimuláció az OOCWC rendszerben}
 
-A CSTS rendszerben a szimuláció kezdeti állapotában a járműveket a mért adatok alapján számolt eloszlás szerint tettük fel a térképre. Ez látható a \ref{simulinit} ábrán. Célunk volt annak megfigyelése, hogyan változik a szimuláció során az autók eloszlása a kezdeti eloszláshoz képest. A \ref{hista}, \ref{histb} és \ref{histc} diagramokon láthatjuk, hogyan változik az eloszlás a szimuláció futásával. (A szimuláció Debrecen város gráffal reprezentált térképén értelmezett.) Az x tengelyen az utcákat, az y tengelyen az azonos utcán található autók számát jelöltük. Csak azok az utcák reprezentáltak a hisztogramon, amelyek legalább egy autót tartalmaznak. A hisztogramok Debrecen utcáit a rajtuk található autók száma szerint rendezve mutatják csökkenő sorrendben. (Forrás: \cite{infocomjournal}.) Érdemes megfigyelni, hogy az eloszlás jellege (Pareto) nem változik a szimuláció során, viszont az utcák sorrendje felcserélődik. Természetes, hogy új utcák lépnek be az eloszlásba, viszont fontos kritérium, hogy az utcák sorrendje nem változhat a szimuláció során. (Meg kell követelnünk a szimulációs algoritmustól egyféle stacionaritást.) Jelenleg az OOCWC-ben található szimulációs algoritmus nem teljesíti ezt a feltételt.
+A CSTS rendszerben a szimuláció kezdeti állapotában a járműveket a mért adatok alapján számolt eloszlás szerint tettük fel a térképre. Ez látható a \ref{simulinit}. ábrán. Célunk volt annak megfigyelése, hogyan változik a szimuláció során az autók eloszlása a kezdeti eloszláshoz képest. Az \ref{hista}., \ref{histb}. és \ref{histc}. diagramokon láthatjuk, hogyan változik az eloszlás a szimuláció futásával. (A szimuláció Debrecen város gráffal reprezentált térképén értelmezett.) Az x tengelyen az utcákat, az y tengelyen az azonos utcán található autók számát jelöltük. Csak azok az utcák reprezentáltak a hisztogramon, amelyek legalább egy autót tartalmaznak. A hisztogramok Debrecen utcáit a rajtuk található autók száma szerint rendezve mutatják csökkenő sorrendben. (Forrás: \cite{infocomjournal}.) Érdemes megfigyelni, hogy az eloszlás jellege (Pareto) nem változik a szimuláció során, viszont az utcák sorrendje felcserélődik. Természetes, hogy új utcák lépnek be az eloszlásba, viszont fontos kritérium, hogy az utcák sorrendje nem változhat a szimuláció során. (Meg kell követelnünk a szimulációs algoritmustól egyféle stacionaritást.) Jelenleg az OOCWC-ben található szimulációs algoritmus nem teljesíti ezt a feltételt.
 
 \begin{figure}[h]
 \centerline{
@@ -496,7 +496,7 @@ A CSTS rendszerben a szimuláció kezdeti állapotában a járműveket a mért a
 \label{histc}
 \end{figure}
 
-A tesztelés során 10000 járművet inicializáltunk a mért adatokon számolt eloszlás alapján. Ez a \ref{simultenth} ábrán látható.
+A tesztelés során 10000 járművet inicializáltunk a mért adatokon számolt eloszlás alapján. Ez a \ref{simultenth}. ábrán látható.
 
 \begin{figure}[h]
 \centerline{
@@ -556,10 +556,49 @@ Reményeink szerint az RTTA és az OOCWC hamarosan alkalmas lesz éles bevetésr
 
 \addcontentsline{toc}{chapter}{Irodalomjegyzék}
 
+\begin{singlespace}
 \bibliography{rtta}
+\end{singlespace}
+
+\chapter*{Függelék}
+\addcontentsline{toc}{chapter}{Függelék}
+
+\noindent
+RTTA is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+\noindent
+RTTA is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+\noindent
+You should have received a copy of the GNU General Public License
+along with RTTA. If not, see <http://www.gnu.org/licenses/>.
+
+\noindent
+CSTS is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+\noindent
+CSTS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+\noindent
+You should have received a copy of the GNU General Public License
+along with CSTS. If not, see <http://www.gnu.org/licenses/>.
 
 \chapter*{Egyéb tudnivalók}
+\addcontentsline{toc}{chapter}{Egyéb tudnivalók}
 
+\begin{singlespace}
 \noindent
 Jelen munka a Nemzeti Tehetség Program, Egyedi fejlesztést biztosító ösztöndíjak NTP-EFÖ-P-15-0187 számú pályázat keretei között készült. A projektet a Emberi Erőforrások Minisztériuma Emberi Erőforrás Támogatáskezelő támogatta.
 
@@ -597,47 +636,10 @@ A Robocar World Championship hivatalos oldala, illetve a tároló: \cite{oocwcre
 \noindent
 A CSTS tárolójában található dokumentáció (\cite{csts}/real-time-traffic-analyzer/doc/traf-analy-eng.pdf) valamint telepítési útmutató (\cite{csts}/real-time-traffic-analyzer/XUP\_notes.txt) a diplomamunka mellékletének tekintendő.
 
-\addcontentsline{toc}{chapter}{Egyéb tudnivalók}
-
-\chapter*{Függelék}
-\addcontentsline{toc}{chapter}{Függelék}
-
-\noindent
-RTTA is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-\noindent
-RTTA is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-\noindent
-You should have received a copy of the GNU General Public License
-along with RTTA. If not, see <http://www.gnu.org/licenses/>.
-
-\noindent
-CSTS is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-\noindent
-CSTS is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-\noindent
-You should have received a copy of the GNU General Public License
-along with CSTS. If not, see <http://www.gnu.org/licenses/>.
+\end{singlespace}
 
 \chapter*{Köszönetnyilvánítás}
 \addcontentsline{toc}{chapter}{Köszönetnyilvánítás}
-
-\begin{singlespace}
 
 A szerző szeretne köszönetet mondani a Robocar World Championship, valamint a Smart City kutatócsoportok tagjainak. A kutatócsoport tagjai (a teljesség igénye nélkül): dr. Ispány Márton egyetemi docens, dr. Bátfai Norbert egyetemi adjunktus, Mamenyák András hallgatótársam, valamint a reguláris oktatásban részt vevő prog1-es és prog2-es hallgatók. Külön köszönet Kóti Balázsnak a grafikai elemek megtervezéséért.
 
@@ -650,7 +652,5 @@ Nem tudok elég hálás lenni mérnök-hecker barátaimnak, kollégáimnak Szil�
 A szerző szeretné megköszönni a segítséget mindenkinek, akik valamilyen formában hozzájárultak a dolgozat alapjául szolgáló publikációk, valamint jelen dolgozat elkészítéséhez. A lista rendkívül hosszú, a teljesség igénye nélkül: Prof. Joan Mattia Plubell, Monori Fanny, és még sokan mások.
 
 Végül, de nem utolsó sorban szeretnék köszönetet mondani szüleimnek, hogy a végletekig támogattak az úton, ami ennek a munkának a létrejöttéhez vezetett.
-
-\end{singlespace}
 
 \end{document}
